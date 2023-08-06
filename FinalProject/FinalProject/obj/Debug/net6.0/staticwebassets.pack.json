@@ -1,0 +1,341 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FinalProject.bundle.scp.css",
+      "PackagePath": "staticwebassets\\FinalProject.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\about.css",
+      "PackagePath": "staticwebassets\\css\\about.css"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\contact.css",
+      "PackagePath": "staticwebassets\\css\\contact.css"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\menu.css",
+      "PackagePath": "staticwebassets\\css\\menu.css"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\pagination.css",
+      "PackagePath": "staticwebassets\\css\\pagination.css"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\recipes.css",
+      "PackagePath": "staticwebassets\\css\\recipes.css"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\sign.css",
+      "PackagePath": "staticwebassets\\css\\sign.css"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\single.css",
+      "PackagePath": "staticwebassets\\css\\single.css"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\stories.css",
+      "PackagePath": "staticwebassets\\css\\stories.css"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\bg_1.jpg",
+      "PackagePath": "staticwebassets\\images\\bg_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\bg_2.jpg",
+      "PackagePath": "staticwebassets\\images\\bg_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\bg_4.jpg",
+      "PackagePath": "staticwebassets\\images\\bg_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\blog-1.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\blog-2.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\blog-3 copy.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-3 copy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\blog-3.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\blog-4.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\blog-5.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\blog-6.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\blog-7.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\blog-8.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\blog-9.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\cart.png",
+      "PackagePath": "staticwebassets\\images\\cart.png"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\category-1.jpg",
+      "PackagePath": "staticwebassets\\images\\category-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\category-2.jpg",
+      "PackagePath": "staticwebassets\\images\\category-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert.jpg",
+      "PackagePath": "staticwebassets\\images\\desert.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert1.jpg",
+      "PackagePath": "staticwebassets\\images\\desert1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert10.jpg",
+      "PackagePath": "staticwebassets\\images\\desert10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert2.jpg",
+      "PackagePath": "staticwebassets\\images\\desert2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert3.jpg",
+      "PackagePath": "staticwebassets\\images\\desert3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert4.jpg",
+      "PackagePath": "staticwebassets\\images\\desert4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert5.jpg",
+      "PackagePath": "staticwebassets\\images\\desert5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert6.jpg",
+      "PackagePath": "staticwebassets\\images\\desert6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert7.jpg",
+      "PackagePath": "staticwebassets\\images\\desert7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert8.jpg",
+      "PackagePath": "staticwebassets\\images\\desert8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\desert9.jpg",
+      "PackagePath": "staticwebassets\\images\\desert9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\food1.jpg",
+      "PackagePath": "staticwebassets\\images\\food1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\food2.jpg",
+      "PackagePath": "staticwebassets\\images\\food2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\food3.jpg",
+      "PackagePath": "staticwebassets\\images\\food3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\food4.jpg",
+      "PackagePath": "staticwebassets\\images\\food4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\food5.jpg",
+      "PackagePath": "staticwebassets\\images\\food5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\image_1.jpg",
+      "PackagePath": "staticwebassets\\images\\image_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\image_2.jpg",
+      "PackagePath": "staticwebassets\\images\\image_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\image_3.jpg",
+      "PackagePath": "staticwebassets\\images\\image_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\image_4.jpg",
+      "PackagePath": "staticwebassets\\images\\image_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\image_5.jpg",
+      "PackagePath": "staticwebassets\\images\\image_5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\image_6.jpg",
+      "PackagePath": "staticwebassets\\images\\image_6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\image_7.jpg",
+      "PackagePath": "staticwebassets\\images\\image_7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\me.jpeg",
+      "PackagePath": "staticwebassets\\images\\me.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\menu1.jpg",
+      "PackagePath": "staticwebassets\\images\\menu1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\menu10.jpg",
+      "PackagePath": "staticwebassets\\images\\menu10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\menu2.jpg",
+      "PackagePath": "staticwebassets\\images\\menu2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\menu3.jpg",
+      "PackagePath": "staticwebassets\\images\\menu3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\menu4.jpg",
+      "PackagePath": "staticwebassets\\images\\menu4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\menu5.jpg",
+      "PackagePath": "staticwebassets\\images\\menu5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\menu6.jpg",
+      "PackagePath": "staticwebassets\\images\\menu6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\menu7.jpg",
+      "PackagePath": "staticwebassets\\images\\menu7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\menu8.jpg",
+      "PackagePath": "staticwebassets\\images\\menu8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\menu9.jpg",
+      "PackagePath": "staticwebassets\\images\\menu9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\orderimage.jpg",
+      "PackagePath": "staticwebassets\\images\\orderimage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\person1.jpg",
+      "PackagePath": "staticwebassets\\images\\person1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\person2.jpg",
+      "PackagePath": "staticwebassets\\images\\person2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\person3.jpg",
+      "PackagePath": "staticwebassets\\images\\person3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\person3.png",
+      "PackagePath": "staticwebassets\\images\\person3.png"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\restaurant.jpeg",
+      "PackagePath": "staticwebassets\\images\\restaurant.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\signImage.jpg",
+      "PackagePath": "staticwebassets\\images\\signImage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\sliderimage1.jpg",
+      "PackagePath": "staticwebassets\\images\\sliderimage1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\sliderimage2.jpg",
+      "PackagePath": "staticwebassets\\images\\sliderimage2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\sliderimage3.jpg",
+      "PackagePath": "staticwebassets\\images\\sliderimage3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\sliderimage4.jpg",
+      "PackagePath": "staticwebassets\\images\\sliderimage4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\sweetimage.jpg",
+      "PackagePath": "staticwebassets\\images\\sweetimage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\js\\basket.js",
+      "PackagePath": "staticwebassets\\js\\basket.js"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\js\\cart.js",
+      "PackagePath": "staticwebassets\\js\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\js\\numanimate.js",
+      "PackagePath": "staticwebassets\\js\\numanimate.js"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\js\\paginate.js",
+      "PackagePath": "staticwebassets\\js\\paginate.js"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\js\\search.js",
+      "PackagePath": "staticwebassets\\js\\search.js"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\js\\sign.js",
+      "PackagePath": "staticwebassets\\js\\sign.js"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\js\\testimonial.js",
+      "PackagePath": "staticwebassets\\js\\testimonial.js"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.FinalProject.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.FinalProject.props",
+      "PackagePath": "build\\FinalProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.FinalProject.props",
+      "PackagePath": "buildMultiTargeting\\FinalProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.FinalProject.props",
+      "PackagePath": "buildTransitive\\FinalProject.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,1055 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+  
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.story {
+    font-size: 2rem;
+}
+
+.nav-link {
+    transition: 0.3s ease;
+    color: black;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.nav-link:hover {
+    color: hotpink
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: transform 0.2s;
+  }
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: palevioletred
+}
+
+@media(max-width:768px) {
+    .hamburger {
+        display: block;
+        left: 450px;
+    position: relative;
+    bottom: 560px;
+
+    }
+
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: relative;
+        /* left: -120%; */
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-image: linear-gradient(to right, #ff6e7f, #bfe9ff);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+       
+
+
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+        top: 30px;
+       
+      
+    }
+}
+
+.dot {
+    color: hotpink;
+    font-family: MV Boli;
+}
+
+/* .slider{
+    position: relative;
+    height: auto;
+    width: 60%;
+
+} */
+
+
+.slider .text {
+    width: 34%;
+    background: #ffd615;
+    height: 680px;
+    z-index: 1;
+}
+
+.slider .img {
+    width: 66%;
+    height: 680px;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.slider {
+    height: 680px;
+     margin-left: 6px;
+}
+
+.slider-item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 680px;
+    position: relative;
+    z-index: 0;
+}
+
+.right h3 {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Poppins", Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.right h1 {
+    font-size: 48px;
+    color: #000000;
+    line-height: 1.3;
+    font-weight: 900;
+    position: relative;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+.right {
+    position: relative;
+    height: 563px;
+    top: 0px;
+
+}
+
+.text {
+    margin-left: 750px;
+    height: 680px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    z-index: 0;
+    bottom: 680px;
+}
+
+.right p {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    background: #000000 !important;
+    border: 1px solid #000000 !important;
+    color: #fff !important;
+}
+
+.slider .full-content {
+    display: none;
+    margin-top: -27px;
+
+}
+
+.container {
+    max-width: 1200px;
+}
+
+
+@media(max-width:1100px) {
+    .slider .img {
+        width: 100%;
+    }
+
+
+    .slider .text {
+        width: 34%;
+        background-color: transparent;
+        height: 680px;
+        z-index: 1;
+        margin-left: 160px;
+
+    }
+
+    .right h1 {
+        color: white;
+    }
+
+    .right h3 {
+        color: white;
+    }
+
+    .right p {
+        color: white;
+
+
+
+    }
+
+    .text {
+        margin-top: -30px;
+    }
+
+    .slider-item {
+        background-position: center center !important;
+    }
+
+    .btn {
+        background-color: #ffd615;
+        color: white;
+    }
+
+
+}
+
+.board {
+    margin-top: 100px;
+}
+
+.board h1 {
+    color: #ff6e7f;
+    border-bottom: 1px solid beige;
+
+}
+
+.subheading span {
+    color: #f67979;
+    position: relative;
+    line-height: 1;
+    font-family: 'Lovers Quarrel', cursive;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.board p {
+    font-weight: 400;
+    color: #999999;
+    font-size: 16px;
+    line-height: 2;
+
+}
+
+.board img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.board .recipes .menu {
+    width: 100%;
+}
+
+.recipes .menu h5 {
+    color: #999999;
+}
+
+.recipes .menu h5:hover {
+    color: #ff6e7f;
+    transition: all 0.5s;
+}
+
+.board h3 {
+    color: #f67979;
+    position: relative;
+    line-height: 1;
+    font-family: 'Lovers Quarrel', cursive;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.board .recipes img {
+    height: 150px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 200px;
+
+}
+
+.wrap-about {
+    position: relative;
+}
+
+.board .wrap-about {
+    position: relative;
+}
+
+.col-sm-5 {
+    width: 100%;
+}
+
+@media(min-width:768px) {
+    .col-sm-5 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 41.66667%;
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+
+    }
+
+
+    .col-sm-7 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+    .d-md-flex {
+        display: flex !important;
+    }
+
+}
+
+@media (max-width: 767.98px) {
+    .wrap-about {
+        padding: 0 15px !important;
+    }
+
+    .recipes .menu .img {
+        width: 100px;
+
+    }
+
+    .menu h5 {
+        font-size: 14px;
+    }
+
+}
+
+.advertisment {
+    position: relative;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    top: 100px;
+    background-attachment: fixed;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.advertisment p {
+    color: white;
+    text-align: center;
+}
+
+
+.advertisment ::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: -1;
+    opacity: 0.3;
+    background: #00000080;
+}
+
+
+.advertisment img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.advertisment .row {
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+.col-md {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    justify-content: center !important;
+}
+
+.advertisment .container h1 {
+    color: hotpink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 95px;
+    font-family: 'Lugrasimo', cursive;
+}
+
+
+.posts {
+    margin-top: 200px;
+}
+
+.posts h2 {
+    color: #ff6e7f;
+    border-bottom: 1px solid beige;
+}
+
+.posts h3 {
+    font-weight: 400;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 18px;
+}
+
+.posts p {
+    color: #999999;
+
+}
+
+.posts p .btn {
+    background-color: #ff6e7f;
+}
+
+.sidebar-wrap {
+    width: 100%;
+    display: block;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.sidebar-box {
+    margin-bottom: 30px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.sidebar-box img {
+    width: 100%;
+    height: auto;
+}
+
+.search-form {
+    background: #f2f2f2;
+}
+
+.sidebar-box .search {
+    width: 20%;
+    background-color: white;
+    color: hotpink;
+    border-style: none;
+    border: 1px solid black;
+    border-radius: 15px;
+    font-size: 12px;
+
+}
+
+.sidebar-box input {
+
+    border-radius: 7px;
+}
+
+@media(max-width:768px) {
+    .sidebar-box .form {
+        margin-left: 50px;
+    }
+
+    .sidebar-box input {
+        width: 75%;
+    }
+
+    .sidebar-box .search {
+        font-size: 16px;
+        width: 22%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .sidebar-wrap {
+        margin-top: 7em;
+    }
+}
+
+
+.season-recipe .sidebar-box {
+    margin-bottom: 30px;
+    font-size: 15px;
+    width: 100%;
+}
+
+/* .category-image img{
+    margin-top: 140px;
+} */
+.category-image img {
+    height: 110%;
+
+}
+
+.category-image h3 {
+    color: white;
+    position: relative;
+    top: -84px;
+}
+
+.season-recipe .sidebar-box .heading {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.season-recipe .heading h2 {
+    color: #ff6e7f;
+
+
+
+}
+
+.category-image {
+    padding: 0;
+    margin: 0;
+}
+
+.category-image li {
+    list-style: none;
+    margin: 0 0 62px 0 !important;
+    padding: 0 !important;
+    border-bottom: none !important;
+    height: 130px;
+}
+
+.category-image li a {
+    height: 140px;
+}
+
+.category-image li a .text h3 {
+    color: #fff;
+    font-weight: 700;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        margin-top: 7em;
+    }
+}
+
+.categories,
+.sidelink {
+    padding: 0;
+}
+
+.categories li,
+.sidelink li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+    list-style: none;
+}
+
+.season-recipe h2 {
+    color: #ff6e7f;
+
+
+}
+
+.season-recipe .blog img {
+    width: 100%;
+    height: 500px;
+}
+
+.season-recipe {
+    margin-top: 50px;
+}
+
+.sidebar .sidebar-box {
+    width: 100%;
+    display: block;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.season-recipe .sidebar h2 {
+    font-family: "Playfair Display", serif;
+}
+
+.season-recipe .desc {
+    display: block;
+    width: 100%;
+    padding: 2em 3em 5em 3em;
+    position: absolute;
+}
+
+.season-recipe .subheading {
+    color: #ffd615;
+}
+
+.desc h3 {
+    width: 200px;
+}
+
+.desc a:hover {
+    color: beige;
+}
+
+.desc .button {
+    color: black;
+    border: 1px solid black;
+    font-size: 25px;
+    border-radius: 10px;
+
+}
+
+.blog .title {
+    display: block;
+    padding: 2em 3em 5em 3em;
+    position: absolute;
+    position: absolute;
+
+}
+
+.blog .title h3 {
+    width: 200px;
+}
+
+.title a:hover {
+    color: beige;
+}
+
+.blog .button {
+    color: black;
+    border: 1px solid black;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+@media (max-width: 991px) {
+    .season-recipe img {
+        margin-top: 30px;
+    }
+
+    .category-image img {
+        width: 100%;
+        height: 200px;
+        margin-top: 120px;
+
+
+    }
+
+    .category-image a {
+        margin-top: 40px;
+    }
+
+    .category-image h3 {
+        margin-top: 80px;
+        color: white;
+        position: relative;
+    }
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+footer {
+    font-size: 16px;
+    background: #1f1f1f;
+    padding: 7em 0;
+    z-index: 0;
+    color: white;
+    margin-top: 40px;
+}
+
+footer .social {
+    margin-top: 3rem !important;
+    float: left !important;
+    margin-left: -33px;
+}
+
+.social li {
+    list-style: none;
+    margin: 0 10px 0 0;
+    display: inline-block;
+}
+
+.social a {
+    height: 50px;
+    width: 50px;
+    display: block;
+    float: left;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    position: relative;
+}
+
+.social a:hover {
+    color: #ff6e7f;
+}
+
+.social span {
+    position: absolute;
+    font-size: 26px;
+    top: 19%;
+    left: 30%;
+}
+
+.information a:hover {
+    color: white;
+}
+
+.categories li {
+    text-decoration: none;
+}
+
+.list a:hover {
+    color: pink;
+}
+
+.term li {
+    display: table;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.term {
+    margin-top: 40px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 0;
+    justify-content: center;
+
+}
+
+.form-group input {
+    height: 64px !important;
+    border: 1px solid transparent;
+    font-size: 20px;
+    border-radius: 5px 0px 0px 5px;
+    padding: 0 20px;
+
+
+}
+
+.submit {
+    color: #fff !important;
+    background: #000000 !important;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: pink;
+}
+
+
+
+
+
+form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.reserve form button {
+    width: 100%;
+    background-color: #ff6e7f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.reserve img {
+    width: 100%;
+}
+
+.reserve form {
+    width: 100%;
+}
+
+.reserve .subheading {
+    color: #f67979;
+    position: relative;
+    line-height: 1;
+    font-family: "Lovers Quarrel", cursive;
+    margin-bottom: -20px;
+    z-index: -1;
+    font-weight: normal;
+    font-size: 50px;
+    display: block;
+}
+
+.reserve h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.reserve {
+    margin-top: 100px;
+}
+
+form button:hover {
+    background-color: beige;
+    color: #ff6e7f;
+}
+
+.category-image h3{
+    position: relative;
+    top: -111px;
+    color: white;
+}
+
+
+
+  
+
+  
+  /* header */
+  
+  .header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+   
+  }
+  
+  .header li a {
+    display: block;
+    margin-top: -25px;
+    text-align: center;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+  
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+  
+        
+    
+  }
+  .logo:hover{
+    color: black;
+  }
+  .header .dot{
+    color: hotpink;
+    font-family: MV Boli;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  /* 48em = 768px */
+  
+  @media (min-width: 48em) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 30px;
+    }
+
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+  
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+
+  .header .menu{
+    margin-top: 20px;
+  }
+.header .menu a:hover{
+    color: hotpink;
+}
+
+  .header a:hover{
+    color: black;
+
+  }
+  .header a{
+    
+    color: black;
+  }
