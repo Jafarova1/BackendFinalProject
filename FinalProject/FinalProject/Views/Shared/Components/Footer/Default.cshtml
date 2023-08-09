@@ -1,0 +1,128 @@
+﻿@model LayoutVM
+<footer>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md">
+                <div class="stories mb-4">
+                    <h2>Stories</h2>
+                    <p>
+                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                        there live the blind texts.
+                    </p>
+                    <ul class="social float-md-left mt-5 d-flex">
+                        <li>
+                            <a href="">
+                                <span class="icon-twitter">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="icon-facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="icon-instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="col-md">
+                <div class="information mb-4 ml-md-5">
+                    <h2>Information</h2>
+                    <ul class="list">
+                        <li>
+                            <a href="" class="py-2 d-block">Terms of Uses</a>
+                        </li>
+                        <li>
+                            <a href="" class="py-2 d-block">About Stories</a>
+                        </li>
+                        <li>
+                            <a href="" class="py-2 d-block">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="" class="py-2 d-block">Accessibility Help</a>
+                        </li>
+                        <li>
+                            <a href="" class="py-2 d-block">Advertise with us</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="col-md">
+                <div class="category mb-4 ml-md-5">
+                    <h2>Categories</h2>
+                    <ul class="list">
+                        <li>
+                            <a href="single.html" class="py-2 d-block">Food</a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="py-2 d-block">Restaurant</a>
+                        </li>
+                        <li>
+                            <a href="single.html" class="py-2 d-block">Dessert</a>
+                        </li>
+                        <li>
+                            <a href="recipes.html" class="py-2 d-block">Lifestyle</a>
+                        </li>
+                        <li>
+                            <a href="recipes.html" class="py-2 d-block">Recipes</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="col-md">
+                <div class="question mb-4">
+                    <h2>Have a Questions?</h2>
+                    <div class="term mb-3">
+                        <ul>
+                            <li>
+                                <span class="map"><i class="fa-solid fa-location-dot"></i></span>
+                                <span class="adress">
+                                    @Model.SettingDatas["Adress"]
+                                </span>
+                            </li>
+                            <li>
+                                <span class="phone"><i class="fa-solid fa-phone"></i></span>
+                                <span class="number">@Model.SettingDatas["Phone"]"</span>
+                            </li>
+                            <li>
+                                <span class="email"><i class="fa-solid fa-envelope"></i></span>
+                                <span class="mail">@Model.SettingDatas["Email"]"</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    Copyright © 2023 All rights reserved | This template is made with <i style="color: pink;"
+                                                                                         class="fa-solid fa-heart"></i> by Jafarova
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</footer>

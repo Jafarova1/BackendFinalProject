@@ -1,6 +1,8 @@
 using FinalProject.Data;
+using FinalProject.Models;
 using FinalProject.Services;
 using FinalProject.Services.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +14,10 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+
 builder.Services.AddScoped<IBlogService, BlogService>();
+builder.Services.AddScoped<ILayoutService, LayoutService>();
 
 var app = builder.Build();
 

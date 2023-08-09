@@ -1,4 +1,5 @@
-﻿@{
+﻿@model HomeVM
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -65,16 +66,19 @@
                                 sentences fly into your mouth.</p>
                             <h3 class="mt-5">Special Recipe</h3>
                             <div class="recipes my-4 d-flex">
+                             @foreach (var blog in Model.Blogs)
+                            {
                                 <div class="menu pr-md-4 text-center">
                                     <a href="single.html">
                                         <div class="img">
-                                            <img src="~/./images/image_4.jpg" alt="">
+                                            <img src="~/./images/@blog.Image" alt="">
                                         </div>
                                     </a>
 
-                                    <h5>Desert-Waffle</h5>
+                                    <h5>@blog.Title</h5>
                                 </div>
-                                <div class="menu pr-md-4 text-center">
+                            }
+                          @*      <div class="menu pr-md-4 text-center">
                                     <div class="img">
                                         <a href="single.html">
                                             <img src="~/./images/sliderimage1.jpg" alt="">
@@ -91,7 +95,7 @@
 
                                     </div>
                                 </div>
-
+*@
                             </div>
 
 
@@ -143,45 +147,29 @@
                             </div>
                         </div>
                         <div class="row">
+                         @foreach (var post in Model.Posts)
+                        {
                             <div class="col-md-4 post-animate">
                                 <div class="blog-entry">
-                                    <a href="single.html" class="img-2"><img src="~/images/blog-1.jpg"
-                                            class="img-fluid"></a>
+                                    <a href="single.html" class="img-2">
+                                        <img src="~/images/@post.Image"
+                                             class="img-fluid">
+                                    </a>
                                     <div class="txt pt-3">
-                                        <p class="meta d-flex"><span class="ml-auto pl-3">March 01, 2018</span>
+                                        <p class="meta d-flex">
+                                            <span class="ml-auto pl-3">@post.CreatedDate</span>
                                         </p>
-                                        <h3>Tasty &amp; Delicious Foods</h3>
-                                        <p class="mb-0"><a href="single.html" class="btn btn-black py-2">Read More <span
-                                                    class="icon-arrow_forward ml-4"></span></a></p>
+                                        <h3>@post.Description</h3>
+                                        <p class="mb-0">
+                                            <a href="single.html" class="btn btn-black py-2">
+                                                Read More <span class="icon-arrow_forward ml-4"></span>
+                                            </a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 ftco-animate">
-                                <div class="blog-entry">
-                                    <a href="single.html" class="img-2"><img src="~/images/blog-2.jpg" class="img-fluid"
-                                            alt="Colorlib Template"></a>
-                                    <div class="txt pt-3">
-                                        <p class="meta d-flex"><span class="ml-auto pl-3">April 05, 2020</span>
-                                        </p>
-                                        <h3>Tasty &amp; Delicious Foods</h3>
-                                        <p class="mb-0"><a href="single.html" class="btn btn-black py-2">Read More <span
-                                                    class="icon-arrow_forward ml-4"></span></a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 ftco-animate">
-                                <div class="blog-entry">
-                                    <a href="single.html" class="img-2"><img src="~/images/blog-3.jpg" class="img-fluid"
-                                            alt="Colorlib Template"></a>
-                                    <div class="txt pt-3">
-                                        <p class="meta d-flex"><span class="ml-auto pl-3">July 02, 2017</span>
-                                        </p>
-                                        <h3>Tasty &amp; Delicious Foods</h3>
-                                        <p class="mb-0"><a href="single.html" class="btn btn-black py-2">Read More <span
-                                                    class="icon-arrow_forward ml-4"></span></a></p>
-                                    </div>
-                                </div>
-                            </div>
+                        }
+                
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -229,13 +217,15 @@
                             </div>
                         </div>
                         <div class="row">
+                       @foreach (var recipe in Model.Recipes)
+                        {
                             <div class="col-md-6 col-lg-6">
                                 <div class="blog">
                                     <div class="image  d-flex align-items-end">
-                                        <img src="./images/image_5.jpg" alt="">
+                                        <img src="~/images/@recipe.Image" alt="">
                                         <div class="desc">
-                                            <span class="subheading">Food</span>
-                                            <h3><a href="recipes.html">Sweet pancakes with fruits</a></h3>
+                                            <span class="subheading">@recipe.Title</span>
+                                            <h3><a href="recipes.html">@recipe.Description</a></h3>
                                             <p class="mb-0">
                                                 <a href="" class="button btn btn-primary">Read More</a>
                                             </p>
@@ -248,25 +238,8 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-6 col-lg-6">
-                                <div class="blog">
-                                    <div class="image  d-flex align-items-end">
-                                        <img src="~/./images/image_3.jpg" alt="">
-                                        <div class="title">
-                                            <span class="subheading">Food</span>
-                                            <h3><a href="recipes.html">ham meat on white surface</a></h3>
-                                            <p class="mb-0">
-                                                <a href="" class="button btn btn-primary">Read More</a>
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-                            </div>
+                        }
+                 
 
                         </div>
                     </div>
