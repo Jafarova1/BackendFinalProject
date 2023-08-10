@@ -1,0 +1,17 @@
+﻿@model Subscriber
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@using (Html.BeginForm("Subscribe", "Subscription", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Email:</label>
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Subscribe</button>
+}

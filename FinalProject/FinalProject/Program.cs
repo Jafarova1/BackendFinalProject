@@ -19,6 +19,7 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 builder.Services.AddScoped<IBlogService, BlogService>();
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

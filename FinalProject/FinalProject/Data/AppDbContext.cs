@@ -15,6 +15,7 @@ namespace FinalProject.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Subscriber> Subscribers { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<BlogInfo> BlogInfos { get; set; }
 
