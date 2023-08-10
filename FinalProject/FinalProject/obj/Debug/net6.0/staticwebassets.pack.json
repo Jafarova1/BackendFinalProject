@@ -1249,6 +1249,10 @@
       "PackagePath": "staticwebassets\\css\\pagination.css"
     },
     {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\profile.css",
+      "PackagePath": "staticwebassets\\css\\profile.css"
+    },
+    {
       "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\css\\recipes.css",
       "PackagePath": "staticwebassets\\css\\recipes.css"
     },

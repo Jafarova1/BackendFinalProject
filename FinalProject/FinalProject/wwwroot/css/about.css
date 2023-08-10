@@ -348,6 +348,8 @@ color:white;
   .wrapper {
     /* position: absolute;
     width: 80vw; */
+    position: sticky;
+    width: 85vw;
     transform:  translate(-50%, -50%);
     top:50%;
     left: 50%;
@@ -396,16 +398,18 @@ color:white;
     line-height: 0;
   }
   
-  /* @media screen and (max-width:1024px) {
+  @media screen and (max-width:1024px) {
     .wrapper {
       width: 85vw;
+      margin-left: 225px;
+      margin-top: 100px;
     }
      .wrapper .container {
-      height: 26vmin;
-      width: 26vmin;
+      height: 42vmin !important;
+      width: 36vmin;
       font-size: 12px;
     }
-  } */
+  }
   
   @media screen and (max-width: 768px) {
     .wrapper{

@@ -2,7 +2,7 @@
 
 namespace FinalProject.Models
 {
-    public class Subscriber
+    public class Subscriber:BaseEntity
     {
         public int Id { get; set; }
         [Required]

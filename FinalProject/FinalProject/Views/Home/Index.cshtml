@@ -122,9 +122,10 @@
                     paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                     <div class="row d-flex justify-content-center mt-4 mb-4">
                         <div class="col-md-8">
-                    <form asp-action="Subscription">
+                    <form method="post" asp-controller="Home" asp-action="PostSubscribe">
                                 <div class="form-group d-flex">
-                                    <input type="text" placeholder="Enter Email Adress">
+                            <input type="text" placeholder="Enter Email Adress" asp-for="Email">
+                            <span class="text-danger" asp-validation-for="Email">@ViewBag.error</span>
                                     <button type="submit" class="btn btn-primary">Subscribe</button>
 
 

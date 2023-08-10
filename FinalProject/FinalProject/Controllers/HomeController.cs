@@ -37,6 +37,35 @@ namespace FinalProject.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Subscribe(SubscribeVM model)
+        {
+            try
+            {
+                if (!ModelState.IsValid) return RedirectToAction("Index", model);
+                var existSubscribe = await _context.Subscribers.FirstOrDefaultAsync(m => m.Email == model.Email);
+                if (existSubscribe != null)
+                {
+                    ModelState.AddModelError("Email", "Email already exist");
+                    return RedirectToAction("Index");
+                }
+                Subscriber subscribe = new()
+                {
+                    Email = model.Email,
+                };
+                await _context.Subscribers.AddAsync(subscribe);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = ex.Message;
+                return View();
+            }
+
+        }
+
 
 
     }
