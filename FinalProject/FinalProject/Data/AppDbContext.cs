@@ -19,7 +19,6 @@ namespace FinalProject.Data
         public DbSet<Post> Posts { get; set; }
         public DbSet<BlogInfo> BlogInfos { get; set; }
         public DbSet<AboutUs> AboutUss { get; set; }
-        public DbSet<AboutBanner> AboutBanners { get; set; }
         public DbSet<AboutSlider> AboutSliders { get; set; }
 
 

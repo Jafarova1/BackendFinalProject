@@ -13,19 +13,21 @@ namespace FinalProject.Controllers
         private readonly AppDbContext _context;
         private readonly ILayoutService _layoutService;
         private readonly IAboutSliderService _aboutSliderService;
-        public AboutController(AppDbContext context,ILayoutService layoutService,IAboutSliderService aboutSliderService)
+        private readonly IAboutUsService _aboutUsService;
+        public AboutController(AppDbContext context,ILayoutService layoutService,IAboutSliderService aboutSliderService,IAboutUsService aboutUsService)
         {
                 _context = context;
             _layoutService = layoutService;
             _aboutSliderService = aboutSliderService;
+            _aboutUsService = aboutUsService;
         }
         public async Task<IActionResult> Index()
         {
-            AboutBanner aboutBanner = await _context.AboutBanners.FirstOrDefaultAsync();
+            AboutUs aboutUs = await _context.AboutUss.FirstOrDefaultAsync();
             List<AboutSlider> aboutSliders = await _aboutSliderService.GetAll();
             AboutVM model = new()
             {
-                AboutBanner = aboutBanner,
+                AboutUs = aboutUs,
                 AboutSliders= aboutSliders
     
             };

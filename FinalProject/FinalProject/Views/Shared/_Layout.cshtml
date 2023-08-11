@@ -25,6 +25,7 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Lumanosimo&display=swap"
           rel="stylesheet">
+    @await RenderSectionAsync("Styles", required: false)
     <link rel="stylesheet" href="~/./css/style.css">
 
 
@@ -43,7 +44,7 @@
                 <a href="index.html" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a asp-controller="About" asp-action="Index" href="about.html" class="nav-link">About</a>
+                <a asp-controller="About" asp-action="Index" class="nav-link">About</a>
             </li>
             <li class="nav-item">
                 <a href="menu.html" class="nav-link">Menu</a>
@@ -78,6 +79,7 @@
 
     <script src="./js/script.js"></script>
     <script src="./js/search.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 
 
 

@@ -12,10 +12,12 @@ namespace FinalProject.Controllers
     public class HomeController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IAboutSliderService _aboutSliderService;
  
-        public HomeController(AppDbContext context,IBlogService blogService)
+        public HomeController(AppDbContext context,IBlogService blogService,IAboutSliderService aboutSliderService)
         {
             _context = context;
+            _aboutSliderService = aboutSliderService;
        
             
         }
@@ -25,11 +27,16 @@ namespace FinalProject.Controllers
             IEnumerable<Blog> blogs = await _context.Blogs.Where(m => !m.SoftDelete).ToListAsync();
             IEnumerable<Post> posts = await _context.Posts.Where(m => !m.SoftDelete).ToListAsync();
             IEnumerable<Recipe> recipes = await _context.Recipes.Where(m => !m.SoftDelete).ToListAsync();
+            List<AboutSlider> sliders = await _aboutSliderService.GetAll();
+            AboutUs aboutUs = await _context.AboutUss.FirstOrDefaultAsync();
             HomeVM model = new()
             {
                 Blogs = blogs,
                 Posts = posts,
-                Recipes = recipes
+                Recipes = recipes,
+                AboutSliders = sliders,
+                AboutUs=aboutUs
+                
 
                 
 

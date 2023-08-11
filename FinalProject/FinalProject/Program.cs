@@ -36,6 +36,8 @@ builder.Services.Configure<IdentityOptions>(options =>
 builder.Services.AddScoped<IBlogService, BlogService>();
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<ISubscribeService, SubscribeService>();
+builder.Services.AddScoped<IAboutUsService, AboutUsService>();
+builder.Services.AddScoped<IAboutSliderService, AboutSliderService>();
 
 
 var app = builder.Build();

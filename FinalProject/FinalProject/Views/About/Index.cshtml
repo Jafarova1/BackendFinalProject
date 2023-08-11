@@ -1,4 +1,4 @@
-﻿
+﻿@model AboutVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -37,22 +37,16 @@
             <div class="row d-flex">
                 <div class="col-md-6 d-flex">
                     <div class="image d-flex">
-                        <a href="single.html"> <img src="~/./images/image_6.jpg" alt=""></a>
+                        <a href="single.html"> <img src="~/./images/@Model.AboutUs.Image." alt=""></a>
 
                     </div>
                 </div>
                 <div class="col-md-6 pl-md-5 py-5">
                     <div class="row justify-content-start pb-3">
                         <div class="col-md-12 heading">
-                            <h2 class="mb-4">About Us</h2>
+                            <h2 class="mb-4">@Model.AboutUs.Title.</h2>
                             <p>
-                                At <em>Sweet Bites</em>, we are passionate about creating memorable dining
-                                experiences
-                                for our guests. Nestled in the heart of <em>Azerbaijan</em>, our restaurant offers a
-                                warm
-                                and inviting ambiance that complements our exquisite cuisine. Whether you're joining
-                                us for a special celebration, a casual dinner with friends, or a romantic evening
-                                for two, we aim to make every visit extraordinary.
+                                @Model.AboutUs.Description.
 
                             </p>
 
@@ -112,25 +106,7 @@
                     <div class="row justify-content-start pb-3">
                         <div class="col-md-12 heading2">
                             <p>
-                                We believe that dining is not just about satisfying hunger; it's an experience that
-                                should delight all your senses. Our restaurant was founded with a passion for
-                                bringing people together over exceptional food, warm hospitality, and a comfortable
-                                ambiance. We take pride in offering a memorable and enjoyable dining experience for
-                                all our guests.
-
-                                Our Culinary Excellence:
-                                Led by our talented and experienced executive chef, our kitchen is a hub of
-                                creativity and innovation. We curate a menu that celebrates the rich tapestry of
-                                flavors from around the world, while also cherishing local and seasonal ingredients.
-                                Every dish is thoughtfully crafted with attention to detail, ensuring that each bite
-                                is a delightful journey of taste.
-                                Our Culinary Philosophy:
-                                Led by our talented team of chefs, our culinary philosophy revolves around the
-                                concept of combining traditional recipes with innovative techniques. We source only
-                                the freshest, locally-sourced ingredients to ensure that every dish is a celebration
-                                of flavors, textures, and aromas. Our commitment to quality and authenticity shines
-                                through in every bite, as we strive to offer a diverse menu that caters to different
-                                palates and dietary preferences.
+                                @Model.AboutUs.Description.
 
 
 
@@ -145,7 +121,7 @@
                 </div>
                 <div class="col-md-6 d-flex">
                     <div class="image2 d-flex">
-                        <a href="single.html"> <img src="~/./images/blog-2.jpg" alt=""></a>
+                        <a href="single.html"> <img src="~/./images/@Model.AboutUs.Image." alt=""></a>
 
                     </div>
                 </div>
@@ -207,28 +183,17 @@
             <div id="slides">
                 <div id="overflow">
                     <div class="inner">
-                        <div class="slide slide_1">
-                            <div class="slide-content">
+                  @foreach (var slider in Model.AboutSliders)
+                        {
+                            <div class="slide slide_1">
+                                <div class="slide-content">
 
-                                <a href="single.html"><img src="~/./images/sliderimage1.jpg" alt=""></a>
+                                    <a href="single.html"><img src="~/./images/@slider.Image" alt=""></a>
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="slide slide_2">
-                            <div class="slide-content">
-                                <a href="single.html"><img src="~/./images/sliderimage2.jpg" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="slide slide_3">
-                            <div class="slide-content">
-                                <a href="single.html"><img src="~/./images/sliderimage3.jpg" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="slide slide_4">
-                            <div class="slide-content">
-                                <a href="single.html"><img src="~/./images/sliderimage4.jpg" alt=""></a>
-                            </div>
-                        </div>
+                        }
+                      
 
                     </div>
                 </div>
@@ -253,70 +218,18 @@
     <section class="slidertext">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <a href="single.html"><h1>Bitter Chocolate</h1></a>
-                    <h5>Date:02.01.2022</h5>
-                    <p>
-                        Chocolate is a popular sweet treat enjoyed by people all around the world. It is made from
-                        the beans of the cacao tree (Theobroma cacao), which are fermented, dried, roasted, and then
-                        processed to create cocoa solids and cocoa butter. These components are used to produce
-                        various types of chocolate.Types of Chocolate: There are several types of chocolate,
-                        including:
+             @foreach (var item in Model.AboutSliders)
+                {
+                    <div class="col-md-6">
+                        <a href="single.html"><h1>@item.Title</h1></a>
+                        <h5>@item.CreatedDate</h5>
+                        <p>
+                            @item.Description
+                        </p>
 
-                        Dark Chocolate: Contains a high percentage of cocoa solids and little to no milk solids. It
-                        has a rich and intense flavor.
-                        Milk Chocolate: Contains cocoa solids, cocoa butter, milk solids, and sugar, giving it a
-                        creamy and sweeter taste.
-                    </p>
-
-                </div>
-                <div class="col-md-6">
-                    <a href="single.html"><h1>Blackberry Cheesecake</h1></a>
-                    <h5>Date:05.06.2021</h5>
-
-                    Cheesecake is a delicious and indulgent dessert that is loved by many around the world. It
-                    typically consists of a crust made from crushed cookies or graham crackers, which is filled with
-                    a creamy mixture of cream cheese, sugar, eggs, and flavorings. The cheesecake is then baked
-                    until firm and chilled before serving.
-
-                    Here are some key points about cheesecake:
-
-                    Origins: The exact origins of cheesecake are unclear, but it is believed to have been enjoyed by
-                    ancient civilizations such as the Greeks and Romans. The earliest recorded recipe for a
-                    cheesecake dates back to ancient Greece.
-
-                </div>
-                <div class="col-md-6">
-                    <a href="single.html"><h1>Strawberry Magnolia</h1></a>
-                    <h5>Date:12.06.2019</h5>
-
-                    Magnolias are a large genus of flowering plants that belong to the family Magnoliaceae. These
-                    beautiful and often fragrant flowers are native to Asia and the Americas. Magnolias are known
-                    for their large, showy blossoms with a variety of shapes and colors, such as white, pink,
-                    purple, and yellow. They are commonly grown as ornamental trees and shrubs in gardens and parks.
-
-                    It's possible that the term "strawberry magnolia" could refer to a hybrid or a specific variety
-                    of magnolia with pink or reddish blooms that bear some resemblance to strawberries, but this
-                    information might not be up-to-date or universally recognized.
-
-                </div>
-                <div class="col-md-6">
-                    <a href="single.html"><h1>Tropical Fruit Cake</h1></a>
-                    <h5>Date:07.10.2023</h5>
-
-
-                    A cake with fruits is a delightful dessert that combines the sweetness and moisture of cake with
-                    the natural flavors and juiciness of fresh or cooked fruits. There are numerous ways to
-                    incorporate fruits into cakes, and the type of fruit used can vary based on personal preferences
-                    and seasonal availability. Here are some common types of fruit cakes:
-
-                    Fresh Fruit Cake: This type of cake typically features a sponge or butter cake base topped with
-                    a layer of fresh fruits such as strawberries, blueberries, kiwi, peaches, or any other favorite
-                    fruit. The fruits can be arranged decoratively on top or mixed into the cake batter before
-                    baking.
-
-
-                </div>
+                    </div>
+                }
+       
             </div>
         </div>
 
