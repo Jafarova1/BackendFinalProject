@@ -2,7 +2,9 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+@section Styles {
+    <link rel="stylesheet" href="~/./css/about.css">
+}
 <body>
 
     <section class="article-wrap" style="background-image: url(./images/bg_4.jpg); ">
@@ -37,7 +39,7 @@
             <div class="row d-flex">
                 <div class="col-md-6 d-flex">
                     <div class="image d-flex">
-                        <a href="single.html"> <img src="~/./images/@Model.AboutUs.Image." alt=""></a>
+                        <a href="single.html"> <img src="~/./images/@Model.AboutUs.FirstImage" alt=""></a>
 
                     </div>
                 </div>
@@ -46,7 +48,7 @@
                         <div class="col-md-12 heading">
                             <h2 class="mb-4">@Model.AboutUs.Title.</h2>
                             <p>
-                                @Model.AboutUs.Description.
+                                @Model.AboutUs.FirstDescription.
 
                             </p>
 
@@ -106,7 +108,7 @@
                     <div class="row justify-content-start pb-3">
                         <div class="col-md-12 heading2">
                             <p>
-                                @Model.AboutUs.Description.
+                                @Model.AboutUs.SecondDescription.
 
 
 
@@ -121,7 +123,7 @@
                 </div>
                 <div class="col-md-6 d-flex">
                     <div class="image2 d-flex">
-                        <a href="single.html"> <img src="~/./images/@Model.AboutUs.Image." alt=""></a>
+                        <a href="single.html"> <img src="~/./images/@Model.AboutUs.SecondtImage" alt=""></a>
 
                     </div>
                 </div>
@@ -179,24 +181,51 @@
             <input type="radio" name="slider" id="slide2">
             <input type="radio" name="slider" id="slide3">
             <input type="radio" name="slider" id="slide4">
-
-            <div id="slides">
+ @*           <div id="slides">
                 <div id="overflow">
                     <div class="inner">
-                  @foreach (var slider in Model.AboutSliders)
-                        {
-                            <div class="slide slide_1">
-                                <div class="slide-content">
+                        <div class="slide slide_1">
+                            <div class="slide-content">
 
-                                    <a href="single.html"><img src="~/./images/@slider.Image" alt=""></a>
+                                <a href="single.html"><img src="./images/@Model.AboutSliders.FirstOrDefault().Image" alt=""></a>
 
-                                </div>
                             </div>
-                        }
-                      
+                        </div>
+                        <div class="slide slide_2">
+                            <div class="slide-content">
+                                <a href="single.html"><img src="./images/sliderimage2.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="slide slide_3">
+                            <div class="slide-content">
+                                <a href="single.html"><img src="./images/sliderimage3.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="slide slide_4">
+                            <div class="slide-content">
+                                <a href="single.html"><img src="./images/sliderimage4.jpg" alt=""></a>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
+            </div>*@
+            <div id="slides">
+                <div id="overflow">
+                    <div class="inner">
+                        @foreach (var item in Model.AboutSliders.Where(s => s.Id != Model.AboutSliders.FirstOrDefault().Id))
+                        {
+                               <div class="swiper-slide">
+                            <div class="slide slide_1">
+                                <div class="slide-content">
+
+                                    <a href="single.html"><img src="~/./images/@item.Image" alt=""></a>
+
+                                </div>
+                            </div>
+                            </div>
+                        }
+            
             </div>
             <div id="controls">
                 <label for="slide1"></label>
@@ -212,6 +241,7 @@
                 <label for="slide4"></label>
 
             </div>
+        </div>
         </div>
 
     </section>
@@ -238,10 +268,10 @@
 </body>
 
 @section Scripts {
-    <script src="./js/script.js"></script>
-    <script src="./js/search.js"></script>
-    <script src="./js/numanimate.js"></script>
-    <script src="./js/slider.js"></script>
+    <script src="~/./js/script.js"></script>
+    <script src="~/./js/search.js"></script>
+    <script src="~/./js/numanimate.js"></script>
+    <script src="~/./js/slider.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 }
 

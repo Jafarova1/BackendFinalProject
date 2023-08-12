@@ -20,6 +20,11 @@ namespace FinalProject.Data
         public DbSet<BlogInfo> BlogInfos { get; set; }
         public DbSet<AboutUs> AboutUss { get; set; }
         public DbSet<AboutSlider> AboutSliders { get; set; }
+        public DbSet<Starter> Starters { get; set; }
+        public DbSet<Dessert> Desserts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<StarterMenuImage> StarterMenuImages { get; set; }
+        public DbSet<DessertMenuImage> DessertMenuImages { get; set; }
 
 
     }

@@ -1,5 +1,4 @@
-﻿@using FinalProject.ViewModels;
-@model HomeVM
+﻿
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,7 +40,7 @@
 
         <ul class="menu">
             <li class="nav-item">
-                <a href="index.html" class="nav-link">Home</a>
+                <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
                 <a asp-controller="About" asp-action="Index" class="nav-link">About</a>
@@ -77,8 +76,8 @@
     @await Component.InvokeAsync("Footer")
 
 
-    <script src="./js/script.js"></script>
-    <script src="./js/search.js"></script>
+    <script src="~/./js/script.js"></script>
+    <script src="~/./js/search.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
 

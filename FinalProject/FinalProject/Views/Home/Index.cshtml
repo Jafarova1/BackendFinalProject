@@ -25,7 +25,7 @@
                                                 You can add more paragraphs or any other content here.
                                             </p>
                                         </div>
-                                        <p><a href="#" id="read-more-link" class="btn btn-black px-3 px-md-4 py-3">Read
+                                        <p><a href="stories.html" id="read-more-link" class="btn btn-black px-3 px-md-4 py-3">Read
                                                 More <span class="icon-arrow_forward ml-lg-4"
                                                     style="background-color: red;"></span></a></p>
 
@@ -58,12 +58,7 @@
 
                         </div>
                         <div class="pl-lg-5 ml-md-5">
-                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from
-                                it would have been rewritten a thousand times and everything that was left from its
-                                origin would be the word "and" and the Little Blind Text should turn around and return
-                                to its own, safe country. A small river named Duden flows by their place and supplies it
-                                with the necessary regelialia. It is a paradisematic country, in which roasted parts of
-                                sentences fly into your mouth.</p>
+                            <p>@Model.AboutUs.FirstDescription</p>
                             <h3 class="mt-5">Special Recipe</h3>
                             <div class="recipes my-4 d-flex">
                              @foreach (var blog in Model.Blogs)
@@ -104,7 +99,7 @@
                     </div>
                     <div
                         class="image col-sm-5  d-flex justify-content-center align-items-center justify-content-md-end">
-                     <a href="single.html"><img src="~/./images/image_6.jpg" alt=""></a>
+                     <a href="single.html"><img src="~/./images/@Model.AboutUs.FirstImage" alt=""></a>
                         
                     </div>
 
@@ -324,3 +319,10 @@
 
 
     </body>
+
+@section Scripts {
+    <script src="~/./js/script.js"></script>
+    <script src="~/./js/search.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+}
+
