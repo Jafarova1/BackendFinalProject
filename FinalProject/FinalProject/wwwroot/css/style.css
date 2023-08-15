@@ -136,7 +136,7 @@ a {
 } */
 
 
-.slider .text {
+.slider .textt {
     width: 34%;
     background: #ffd615;
     height: 680px;
@@ -191,7 +191,7 @@ a {
 
 }
 
-.text {
+.textt {
     margin-left: 750px;
     height: 680px;
     background-size: cover;
@@ -1053,6 +1053,12 @@ form button:hover {
     
     color: black;
   }
+.cart-modal-overlay{
+    display:none
+}
+.cart-btn {
+    display: none
+}
 
 
 

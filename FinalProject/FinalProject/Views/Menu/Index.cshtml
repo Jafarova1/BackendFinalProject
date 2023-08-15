@@ -1,0 +1,588 @@
+﻿@model FoodVM
+@{
+    ViewData["Title"] = "Index";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Lovers+Quarrel&family=Lugrasimo&family=Lumanosimo&family=Playfair+Display+SC:ital@1&family=Playfair+Display:ital@1&family=Spectral:wght@200;300&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Lugrasimo&family=Lumanosimo&family=Playfair+Display+SC:ital@1&family=Playfair+Display:ital@1&family=Spectral:wght@200;300&display=swap"
+          rel="stylesheet">
+}
+
+<body>
+    <section class="article-wrap" style="background-image: url(./images/bg_4.jpg); ">
+        <div class="overlay">
+            <div class="container">
+                <div class="row align-items-end justify-content-center">
+                    <div class="col-md-9 pb-5 text-center">
+                        <h1 class="mb-3">Menu</h1>
+                        <p class="items">
+                            <span class="mr-2">
+                                <a href="index.html">Home</a>
+                                <i class="fa-solid fa-angle-right"></i>
+
+                            </span>
+                            <span>
+                                Menu
+                                <i class="fa-solid fa-angle-right"></i>
+                            </span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="starter">
+        <div class="pxl-heading">
+            <h2>Starter</h2>
+            <p>Find your favourite meal from the delicious options we have</p>
+
+        </div>
+    </section>
+    <section>
+
+        <!-- Start DEMO HTML (Use the following code into your project)-->
+        <!-- <div class="cart-modal-overlay">
+            <div class="cart-modal">
+              <i id="close-btn" class="fas fa-times"></i>
+                <h1 class="cart-is-empty">Cart is empty</h1>
+
+                <div class="product-rows">
+                </div>
+                <div class="total">
+                  <h1 class="cart-total">TOTAL</h1>
+                    <span class="total-price">$0</span>
+                      <button class="purchase-btn">PURCHASE</button>
+                </div>
+              </div>
+        </div>
+
+
+          <div class="cart-btn">
+            <i id="cart" class="fas fa-shopping-cart"></i>
+              <span class ="cart-quantity">0</span>
+          </div> -->
+
+        <div class="items-container">
+            @foreach (var starterMenu in Model.Starter)
+            {
+                <div class="card-1 card">
+            @foreach (var starterImg in Model.StarterMenuImages)
+                    {
+                        <img class="product-image" src="./images/@starterImg.Image" alt="">
+                    }
+                    <span>@starterMenu.Title</span>
+                    <span class="product-price">@starterMenu.Price</span>
+                  
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="add-to-cart" data-id="@starterMenu.Id"><button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="add-to-cart" data-id="@starterMenu.Id">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                   
+                </div>
+            }
+     
+
+
+
+        </div>
+        <div class="items-container">
+            <div class="card-1 card">
+                <img class="product-image" src="~/./images/food1.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>Grilled Cheese Crostini</span>
+                <span class="product-price">$100</span>
+            </div>
+            <div class="card-2 card">
+                <img class="product-image" src="~/./images/food2.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>
+                    Spaghetti carbonara
+                </span>
+                <span class="product-price">$117</span>
+            </div>
+            <div class="card-3 card">
+                <img class="product-image" src="~/./images/food3.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>Beer-Cheeseburger</span>
+                <span class="product-price">$95</span>
+            </div>
+            <div class="card-4 card">
+                <img class="product-image" src="~/./images/food4.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>
+                    Perfect Scrambled Eggs
+                </span>
+                <span class="product-price">$83</span>
+            </div>
+            <div class="card-5 card">
+                <img class="product-image" src="~/./images/food5.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>
+                    Perfect Scrambled Eggs
+                </span>
+                <span class="product-price">$79</span>
+            </div>
+
+
+        </div>
+
+
+    </section>
+    <!-- <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="menu-item">
+                        <div class="pxl-item-img">
+                            <img src="./images/menu1.jpg" alt="">
+
+                        </div>
+                        <div class="pxl-item-desc">
+                            <div class="title">
+                                <h4>Chicken Avocado Sandwitch</h4>
+                                <span class="line"></span>
+                                <span class="price">80$</span>
+
+
+
+
+
+
+                            </div>
+                            <div class="about">
+                                <p>Type of sandwich made with chicken and avocado.</p>
+                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="select">
+
+                    </div><br>
+                    <div class="menu-item">
+                        <div class="pxl-item-img">
+                            <img src="./images/menu2.jpg" alt="">
+
+                        </div>
+                        <div class="pxl-item-desc">
+                            <div class="title">
+                                <h4>Swiss Hash Browns</h4>
+                                <span class="line"></span>
+                                <span class="price">155$</span>
+
+
+                            </div>
+                            <div class="about">
+                                <p>Type of sandwich made with chicken and avocado.</p>
+                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="pxl-item-img">
+                            <img src="./images/menu3.jpg" alt="">
+
+                        </div>
+                        <div class="pxl-item-desc">
+                            <div class="title">
+                                <h4>Sesame Noodles with Garlic</h4>
+                                <span class="line"></span>
+                                <span class="price">130$</span>
+
+
+                            </div>
+                            <div class="about">
+                                <p>Type of sandwich made with chicken and avocado.</p>
+                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="pxl-item-img">
+                            <img src="./images/menu4.jpg" alt="">
+
+                        </div>
+                        <div class="pxl-item-desc">
+                            <div class="title">
+                                <h4>Spaghetti carbonara</h4>
+                                <span class="line"></span>
+                                <span class="price">120$</span>
+
+
+                            </div>
+                            <div class="about">
+                                <p>Type of sandwich made with chicken and avocado.</p>
+                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="pxl-item-img">
+                            <img src="./images/menu5.jpg" alt="">
+
+                        </div>
+                        <div class="pxl-item-desc">
+                            <div class="title">
+                                <h4>One-Pot Beef with Broccoli</h4>
+                                <span class="line"></span>
+                                <span class="price">600$</span>
+
+
+                            </div>
+                            <div class="about">
+                                <p>Type of sandwich made with chicken and avocado.</p>
+                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-sm">
+                    <div class="menu-item">
+                        <div class="pxl-item-img">
+                            <img src="./images/menu6.jpg" alt="">
+
+                        </div>
+                        <div class="pxl-item-desc">
+                            <div class="title">
+                                <h4>Perfect Scrambled Eggs</h4>
+                                <span class="line"></span>
+                                <span class="price">135$</span>
+
+
+                            </div>
+                            <div class="about">
+                                <p>Type of sandwich made with chicken and avocado.</p>
+                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="pxl-item-img">
+                            <img src="./images/menu7.jpg" alt="">
+
+                        </div>
+                        <div class="pxl-item-desc">
+                            <div class="title">
+                                <h4>Beer-Cheeseburger</h4>
+                                <span class="line"></span>
+                                <span class="price">200$</span>
+
+
+                            </div>
+                            <div class="about">
+                                <p>Type of sandwich made with chicken and avocado.</p>
+                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="pxl-item-img">
+                            <img src="./images/menu8.jpg" alt="">
+
+                        </div>
+                        <div class="pxl-item-desc">
+                            <div class="title">
+                                <h4>Grilled Cheese Crostini</h4>
+                                <span class="line"></span>
+                                <span class="price">220$</span>
+
+
+                            </div>
+                            <div class="about">
+                                <p>Type of sandwich made with chicken and avocado.</p>
+                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="pxl-item-img">
+                            <img src="./images/menu9.jpg" alt="">
+
+                        </div>
+                        <div class="pxl-item-desc">
+                            <div class="title">
+                                <h4>Roasted Veggie Chips</h4>
+                                <span class="line"></span>
+                                <span class="price">100$</span>
+
+
+                            </div>
+                            <div class="about">
+                                <p>Type of sandwich made with chicken and avocado.</p>
+                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="pxl-item-img">
+                            <img src="./images/menu10.jpg" alt="">
+
+                        </div>
+                        <div class="pxl-item-desc">
+                            <div class="title">
+                                <h4>Pesto Chicken Bake</h4>
+                                <span class="line"></span>
+                                <span class="price">85$</span>
+
+
+                            </div>
+                            <div class="about">
+                                <p>Type of sandwich made with chicken and avocado.</p>
+                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section> -->
+
+
+
+    <section class="advertisment" id="section-counter" style="background-image: url(images/desert.jpg);
+         filter: grayscale(6%); opacity: 1; ;">
+        <div class="background-overlay"></div>
+        <div class="container">
+            <div class="row d-flex justify-content-center mt-4 mb-4">
+                <div class="col-md-8">
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="mainMenu">
+        <div class="pxl-heading">
+            <h2>Dessert</h2>
+            <p>Find your favourite meal from the delicious options we have</p>
+
+
+        </div>
+    </section>
+    <section>
+        <div class="items-container">
+            <div class="card-1 card">
+                <img class="product-image" src="~/./images/desert1.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>Citrus Lemonade</span>
+                <span class="product-price">$20</span>
+            </div>
+            <div class="card-2 card">
+                <img class="product-image" src="~/./images/desert2.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>
+                    Chicken Avocado Soup
+                </span>
+                <span class="product-price">$110</span>
+            </div>
+            <div class="card-3 card">
+                <img class="product-image" src="~/./images/desert3.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>
+                    One-Pot Beef with Broccoli
+                </span>
+                <span class="product-price">$120</span>
+            </div>
+            <div class="card-4 card">
+                <img class="product-image" src="~/./images/desert4.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>
+                    Grilled Cheese Crostini
+                </span>
+                <span class="product-price">$80</span>
+            </div>
+            <div class="card-5 card">
+                <img class="product-image" src="~/./images/desert5.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>Chicken Avocado Sandwitch</span>
+                <span class="product-price">$65</span>
+            </div>
+
+
+        </div>
+        <div class="items-container">
+            <div class="card-1 card">
+                <img class="product-image" src="~/./images/desert6.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>Grilled Cheese Crostini</span>
+                <span class="product-price">$100</span>
+            </div>
+            <div class="card-2 card">
+                <img class="product-image" src="~/./images/desert7.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>
+                    Spaghetti carbonara
+                </span>
+                <span class="product-price">$117</span>
+            </div>
+            <div class="card-3 card">
+                <img class="product-image" src="~/./images/desert8.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>Beer-Cheeseburger</span>
+                <span class="product-price">$95</span>
+            </div>
+            <div class="card-4 card">
+                <img class="product-image" src="~/./images/desert9.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>
+                    Perfect Scrambled Eggs
+                </span>
+                <span class="product-price">$83</span>
+            </div>
+            <div class="card-5 card">
+                <img class="product-image" src="~/./images/desert10.jpg" alt="">
+                <button class="add-to-cart">Add to cart</button>
+                <span>
+                    Perfect Scrambled Eggs
+                </span>
+                <span class="product-price">$79</span>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="advertisment" id="section-counter" style="background-image: url(images/sweetimage.jpg);
+        filter: grayscale(6%); opacity: 1; ;">
+        <div class="background-overlay"></div>
+        <div class="container">
+            <div class="row d-flex justify-content-center mt-4 mb-4">
+                <div class="col-md-8">
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="testimonials">
+        <div class="container">
+            <h2>From Our Customers</h2>
+
+
+            <div class="slider-indicator">
+                <img src="~/./images/person1.jpg" class="active" alt="img" data-id="0">
+                <img src="~/./images/person2.jpg" alt="img" data-id="1">
+                <img src="~/./images/person3.png" alt="img" data-id="2">
+            </div>
+
+            <div class="slider">
+                <div class="slide active">
+                    <p>
+                        I had the most delightful fine dining experience at 'Sweet Bites.' From the moment we
+                        stepped in, the elegant decor and soothing ambiance set the perfect tone for a special
+                        evening. The service was impeccable, and the staff went out of their way to make us feel
+                        like royalty. The dishes were a delightful fusion of flavors, and each plate was a work of
+                        art.
+                    </p>
+                    <div class="client-info">
+                        <h3>Elisa</h3>
+                        <span>Founder at Zach</span>
+                    </div>
+                </div>
+                <div class="slide">
+                    <p>
+                        'Sweet Bites' is a hidden gem for families seeking a warm and inviting dining experience.
+                        The moment we walked in, we were greeted with a smile, and the staff was incredibly friendly
+                        throughout our meal. The menu offered a great variety, and the kids' menu pleased my picky
+                        eaters. We all loved their wood-fired pizzas and homemade pasta dishes.
+                    </p>
+                    <div class="client-info">
+                        <h3>Natasha</h3>
+                        <span>Founder at Welling</span>
+                    </div>
+                </div>
+                <div class="slide">
+                    <p>
+                        Sweet Bites' exceeded my expectations with its commitment to using fresh,
+                        locally-sourced ingredients. The moment I tasted their dishes, it was evident how much
+                        effort they put into selecting top-quality produce. Their farm-to-table approach was evident
+                        in every bite, and I appreciated their dedication to sustainable and eco-friendly practices.
+                    </p>
+                    <div class="client-info">
+                        <h3>Melisa</h3>
+                        <span>Founder at Zim</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="order">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="head">
+                        <h2>@Model.Order.Title</h2>
+                        <p class="text">We are open for anu order Online</p>
+                        <p class="desc">
+                           @Model.Order.Description
+                        </p>
+
+                    </div>
+                    <div class="call">
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <div class="content">
+                            <p>Call us to order online</p>
+                            <p>0504583455</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="orderImage">
+                        <img src="~/./images/@Model.Order.Image" alt="">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+@section Scripts {
+    <script src="~/./js/testimonial.js"></script>
+    <script src="~/./js/cart.js"></script>
+    <script src="~/./js/script.js"></script>
+    <script src="~/./js/basket.js"></script>
+}
+

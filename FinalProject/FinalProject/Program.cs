@@ -38,6 +38,10 @@ builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<ISubscribeService, SubscribeService>();
 builder.Services.AddScoped<IAboutUsService, AboutUsService>();
 builder.Services.AddScoped<IAboutSliderService, AboutSliderService>();
+builder.Services.AddScoped<IStarterMenuService, StarterMenuService>();
+builder.Services.AddScoped<IDessertMenuService, DessertMenuService>();
+builder.Services.AddScoped<IStoryService, StoryService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 
 var app = builder.Build();

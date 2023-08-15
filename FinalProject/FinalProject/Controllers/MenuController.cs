@@ -1,5 +1,6 @@
 ﻿using FinalProject.Data;
 using FinalProject.Models;
+using FinalProject.Services;
 using FinalProject.Services.Interfaces;
 using FinalProject.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -13,43 +14,60 @@ namespace FinalProject.Controllers
         private readonly ILayoutService _layoutService;
         private readonly IStarterMenuService _starterMenuService;
         private readonly IDessertMenuService _dessertMenuService;
-        public MenuController(AppDbContext context,ILayoutService layoutService,IStarterMenuService starterMenuService,IDessertMenuService dessertMenuService)
+        private readonly IOrderService _orderService;
+        public MenuController(AppDbContext context,ILayoutService layoutService,IStarterMenuService starterMenuService,IDessertMenuService dessertMenuService,IOrderService orderService)
         {
                 _context = context;
             _layoutService = layoutService;
             _dessertMenuService = dessertMenuService;
             _starterMenuService = starterMenuService;
+            _orderService = orderService;
         }
-    //    private static List<MenuItem> menuItems = new List<MenuItem>
-    //{
-    //    new MenuItem { Id = 1, Name = "Burger", Price = 10.99m, Description = "Delicious beef burger with lettuce and tomato" },
-    //    new MenuItem { Id = 2, Name = "Pizza", Price = 14.99m, Description = "Pepperoni and cheese pizza" }
-    //};
 
-        public async IActionResult Index()
+
+        public  async Task<IActionResult> Index()
         {
-            Starter starter = await _context.Starters.FirstOrDefaultAsync();
-            Dessert dessert=await _context.Desserts.FirstOrDefaultAsync();
-            List<StarterMenuImage> starterMenuImages = await _starterMenuService.GetAll();
-            FoodVM food = new()
+            //IEnumerable<StarterMenuImage> starterMenuImages = await _context.StarterMenuImages.Where(m => !m.SoftDelete).ToListAsync();
+            //IEnumerable<DessertMenuImage> dessertMenuImages = await _context.DessertMenuImages.Where(m => !m.SoftDelete).ToListAsync();
+
+            //IEnumerable<Starter> starters = await _starterMenuService.GetAll();
+            //IEnumerable<Dessert> desserts = await _dessertMenuService.GetAll();
+            //FoodVM model = new()
+            //{
+            //    StarterMenuImages = starterMenuImages.ToList(),
+            //    DessertMenuImages = dessertMenuImages.ToList(),
+            //    Starters = starters.ToList(),
+            //    Desserts = desserts.ToList()
+
+
+
+            //};
+
+     
+            Order orders = await _context.Orders.FirstOrDefaultAsync();
+            List<Starter> starters = await _context.Starters.Include(m => m.Images).ToListAsync();
+            List<Dessert> desserts = await _context.Desserts.Include(m => m.Images).ToListAsync();
+
+            //List<AboutSlider> aboutSliders = await _aboutSliderService.GetAll();
+            FoodVM model = new()
             {
+                //AboutUs = aboutUs,
+                //AboutSliders = aboutSliders
+                Starter=starters,
+                Dessert=desserts,
+                Order=orders
+                
+                
 
             };
-            return await _starterMenuService.GetAll();
+            return View(model);
+
+
+
+            //return View(model);
      
         }
 
-        [HttpPost]
-        //public IActionResult Order(int itemId)
-        //{
-        //    var selectedItem = menuItems.Find(item => item.Id == itemId);
-        //    if (selectedItem != null)
-        //    {
-        //        // Process the order or take any necessary actions
-        //        return Content($"You've ordered {selectedItem.Name}");
-        //    }
 
-        //    return NotFound();
-        //}
     }
 }

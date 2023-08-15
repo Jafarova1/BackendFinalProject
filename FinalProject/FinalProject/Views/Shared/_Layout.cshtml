@@ -28,11 +28,10 @@
     <link rel="stylesheet" href="~/./css/style.css">
 
 
+
 </head>
 
 <body>
-
-
     <header class="header">
         <a href="" class="logo"><span class="dot">Sweet</span> Bites</a>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
@@ -40,16 +39,16 @@
 
         <ul class="menu">
             <li class="nav-item">
-                <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                <a asp-controller ="Home" asp-action="Index" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
                 <a asp-controller="About" asp-action="Index" class="nav-link">About</a>
             </li>
             <li class="nav-item">
-                <a href="menu.html" class="nav-link">Menu</a>
+                <a asp-controller="Menu" asp-action="Index" class="nav-link">Menu</a>
             </li>
             <li class="nav-item">
-                <a href="stories.html" class="nav-link">Stories</a>
+                <a asp-controller="Stories" asp-action="Index" class="nav-link">Stories</a>
             </li>
             <li class="nav-item">
                 <a href="recipes.html" class="nav-link">Posts</a>
@@ -58,19 +57,58 @@
                 <a href="contact.html" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-                <a href="profile.html" class="nav-link">Profile</a>
-            </li>
-            <li class="nav-item">
                 <a href="sign.html" class="nav-link">Sign in</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin</a>
-            </li>
+            <div class="cart-modal-overlay">
+                <div class="cart-modal">
+                    <i id="close-btn" class="fas fa-times"></i>
+                    <h1 class="cart-is-empty">Cart is empty</h1>
+
+                    <div class="product-rows">
+                    </div>
+                    <div class="total">
+                        <h1 class="cart-total">TOTAL</h1>
+                        <span class="total-price">$0</span>
+                        <button class="purchase-btn">PURCHASE</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cart-btn">
+                <i id="cart" class="fas fa-shopping-cart"></i>
+                <span class="cart-quantity">0</span>
+            </div>
+
+
+
 
 
 
 
         </ul>
+
+        <div class="cart-modal-overlay">
+            <div class="cart-modal">
+                <i id="close-btn" class="fas fa-times"></i>
+                <h1 class="cart-is-empty">Cart is empty</h1>
+
+                <div class="product-rows">
+                </div>
+                <div class="total">
+                    <h1 class="cart-total">TOTAL</h1>
+                    <span class="total-price">$0</span>
+                    <button class="purchase-btn">PURCHASE</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cart-btn">
+            <i id="cart" class="fas fa-shopping-cart"></i>
+            <span class="cart-quantity">0</span>
+        </div>
+
     </header>
             @RenderBody()
     @await Component.InvokeAsync("Footer")

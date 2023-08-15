@@ -489,15 +489,16 @@ footer .social {
 	margin:0;
 }
 
-.testimonials .slider{
-	border:1px solid #7e8bb6;
-	max-width: 600px;
-	margin: auto;
-	text-align: center;
-	padding:30px;
-	background-color:#ff6e7f;
-	border-radius: 50px;
-   }
+    .testimonials .slider {
+        border: 1px solid #7e8bb6;
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+        padding: 30px;
+        background-color: #ff6e7f;
+        border-radius: 50px;
+        height: 360px;
+    }
 
    .testimonials .slider-indicator{
 	text-align: center;

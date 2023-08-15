@@ -433,6 +433,10 @@
       "PackagePath": "staticwebassets\\admin\\images\\icon\\logo.png"
     },
     {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\admin\\js\\admin.js",
+      "PackagePath": "staticwebassets\\admin\\js\\admin.js"
+    },
+    {
       "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\admin\\js\\bootstrap-datetimepicker.js",
       "PackagePath": "staticwebassets\\admin\\js\\bootstrap-datetimepicker.js"
     },

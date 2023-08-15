@@ -730,3 +730,11 @@ margin-left: 50px;
   .header .menu a:hover{
     color: hotpink;
 }
+
+.cart-modal-overlay {
+    display: none
+}
+
+.cart-btn {
+    display: none
+}
