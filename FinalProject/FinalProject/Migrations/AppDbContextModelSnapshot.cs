@@ -119,6 +119,69 @@ namespace FinalProject.Migrations
                     b.ToTable("Advertisments");
                 });
 
+            modelBuilder.Entity("FinalProject.Models.AppUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsRememberMe")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("FinalProject.Models.Blog", b =>
                 {
                     b.Property<int>("Id")
@@ -239,6 +302,59 @@ namespace FinalProject.Migrations
                     b.HasIndex("DessertId");
 
                     b.ToTable("DessertMenuImages");
+                });
+
+            modelBuilder.Entity("FinalProject.Models.FoodComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DessertId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DessertMenuId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("StarterId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StarterMenuId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("DessertId");
+
+                    b.HasIndex("StarterId");
+
+                    b.ToTable("FoodComments");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Order", b =>
@@ -497,27 +613,6 @@ namespace FinalProject.Migrations
                     b.ToTable("Subscribers");
                 });
 
-            modelBuilder.Entity("FinalProject.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("FinalProject.Models.DessertMenuImage", b =>
                 {
                     b.HasOne("FinalProject.Models.Dessert", "Dessert")
@@ -527,6 +622,33 @@ namespace FinalProject.Migrations
                         .IsRequired();
 
                     b.Navigation("Dessert");
+                });
+
+            modelBuilder.Entity("FinalProject.Models.FoodComment", b =>
+                {
+                    b.HasOne("FinalProject.Models.AppUser", "AppUser")
+                        .WithMany("ProductComments")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FinalProject.Models.Dessert", "Dessert")
+                        .WithMany()
+                        .HasForeignKey("DessertId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FinalProject.Models.Starter", "Starter")
+                        .WithMany()
+                        .HasForeignKey("StarterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Dessert");
+
+                    b.Navigation("Starter");
                 });
 
             modelBuilder.Entity("FinalProject.Models.StarterMenuImage", b =>
@@ -542,6 +664,11 @@ namespace FinalProject.Migrations
                         .IsRequired();
 
                     b.Navigation("Starter");
+                });
+
+            modelBuilder.Entity("FinalProject.Models.AppUser", b =>
+                {
+                    b.Navigation("ProductComments");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Dessert", b =>

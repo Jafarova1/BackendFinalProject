@@ -3,13 +3,14 @@
     ViewData["Title"] = "Index";
 }
 @section Styles {
-    <link rel="stylesheet" href="~/css/menu.css">
+  
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Lovers+Quarrel&family=Lugrasimo&family=Lumanosimo&family=Playfair+Display+SC:ital@1&family=Playfair+Display:ital@1&family=Spectral:wght@200;300&display=swap"
           rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Lugrasimo&family=Lumanosimo&family=Playfair+Display+SC:ital@1&family=Playfair+Display:ital@1&family=Spectral:wght@200;300&display=swap"
           rel="stylesheet">
+    <link rel="stylesheet" href="~/css/menu.css">
 }
 
 <body>
@@ -73,15 +74,15 @@
           </div> -->
 
         <div class="items-container">
+        
             @foreach (var starterMenu in Model.Starter)
             {
                 <div class="card-1 card">
-            @foreach (var starterImg in Model.StarterMenuImages)
-                    {
-                        <img class="product-image" src="./images/@starterImg.Image" alt="">
-                    }
+
+                    <img class="product-image" src="~/./images/@starterMenu.Images.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
+                    
                     <span>@starterMenu.Title</span>
-                    <span class="product-price">@starterMenu.Price</span>
+                    <span class="product-price">@starterMenu.Price.ToString("0.############################")$</span>
                   
                     @if (User.Identity.IsAuthenticated)
                     {
@@ -108,270 +109,40 @@
 
         </div>
         <div class="items-container">
-            <div class="card-1 card">
-                <img class="product-image" src="~/./images/food1.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>Grilled Cheese Crostini</span>
-                <span class="product-price">$100</span>
-            </div>
-            <div class="card-2 card">
-                <img class="product-image" src="~/./images/food2.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>
-                    Spaghetti carbonara
-                </span>
-                <span class="product-price">$117</span>
-            </div>
-            <div class="card-3 card">
-                <img class="product-image" src="~/./images/food3.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>Beer-Cheeseburger</span>
-                <span class="product-price">$95</span>
-            </div>
-            <div class="card-4 card">
-                <img class="product-image" src="~/./images/food4.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>
-                    Perfect Scrambled Eggs
-                </span>
-                <span class="product-price">$83</span>
-            </div>
-            <div class="card-5 card">
-                <img class="product-image" src="~/./images/food5.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>
-                    Perfect Scrambled Eggs
-                </span>
-                <span class="product-price">$79</span>
-            </div>
+         @foreach (var item in Model.Starter)
+            {
+                <div class="card-1 card">
+                    <img class="product-image" src="~/./images/@item.Images.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
+                    <span>@item.Title</span>
+                    <span class="product-price">@item.Price.ToString("0.############################")$</span>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="add-to-cart" data-id="@item.Id"><button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="add-to-cart" data-id="@item.Id">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+        
+                </div>
+            }
+   
 
 
         </div>
 
 
     </section>
-    <!-- <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="menu-item">
-                        <div class="pxl-item-img">
-                            <img src="./images/menu1.jpg" alt="">
 
-                        </div>
-                        <div class="pxl-item-desc">
-                            <div class="title">
-                                <h4>Chicken Avocado Sandwitch</h4>
-                                <span class="line"></span>
-                                <span class="price">80$</span>
-
-
-
-
-
-
-                            </div>
-                            <div class="about">
-                                <p>Type of sandwich made with chicken and avocado.</p>
-                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
-
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="select">
-
-                    </div><br>
-                    <div class="menu-item">
-                        <div class="pxl-item-img">
-                            <img src="./images/menu2.jpg" alt="">
-
-                        </div>
-                        <div class="pxl-item-desc">
-                            <div class="title">
-                                <h4>Swiss Hash Browns</h4>
-                                <span class="line"></span>
-                                <span class="price">155$</span>
-
-
-                            </div>
-                            <div class="about">
-                                <p>Type of sandwich made with chicken and avocado.</p>
-                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="pxl-item-img">
-                            <img src="./images/menu3.jpg" alt="">
-
-                        </div>
-                        <div class="pxl-item-desc">
-                            <div class="title">
-                                <h4>Sesame Noodles with Garlic</h4>
-                                <span class="line"></span>
-                                <span class="price">130$</span>
-
-
-                            </div>
-                            <div class="about">
-                                <p>Type of sandwich made with chicken and avocado.</p>
-                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="pxl-item-img">
-                            <img src="./images/menu4.jpg" alt="">
-
-                        </div>
-                        <div class="pxl-item-desc">
-                            <div class="title">
-                                <h4>Spaghetti carbonara</h4>
-                                <span class="line"></span>
-                                <span class="price">120$</span>
-
-
-                            </div>
-                            <div class="about">
-                                <p>Type of sandwich made with chicken and avocado.</p>
-                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="pxl-item-img">
-                            <img src="./images/menu5.jpg" alt="">
-
-                        </div>
-                        <div class="pxl-item-desc">
-                            <div class="title">
-                                <h4>One-Pot Beef with Broccoli</h4>
-                                <span class="line"></span>
-                                <span class="price">600$</span>
-
-
-                            </div>
-                            <div class="about">
-                                <p>Type of sandwich made with chicken and avocado.</p>
-                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="col-sm">
-                    <div class="menu-item">
-                        <div class="pxl-item-img">
-                            <img src="./images/menu6.jpg" alt="">
-
-                        </div>
-                        <div class="pxl-item-desc">
-                            <div class="title">
-                                <h4>Perfect Scrambled Eggs</h4>
-                                <span class="line"></span>
-                                <span class="price">135$</span>
-
-
-                            </div>
-                            <div class="about">
-                                <p>Type of sandwich made with chicken and avocado.</p>
-                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="pxl-item-img">
-                            <img src="./images/menu7.jpg" alt="">
-
-                        </div>
-                        <div class="pxl-item-desc">
-                            <div class="title">
-                                <h4>Beer-Cheeseburger</h4>
-                                <span class="line"></span>
-                                <span class="price">200$</span>
-
-
-                            </div>
-                            <div class="about">
-                                <p>Type of sandwich made with chicken and avocado.</p>
-                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="pxl-item-img">
-                            <img src="./images/menu8.jpg" alt="">
-
-                        </div>
-                        <div class="pxl-item-desc">
-                            <div class="title">
-                                <h4>Grilled Cheese Crostini</h4>
-                                <span class="line"></span>
-                                <span class="price">220$</span>
-
-
-                            </div>
-                            <div class="about">
-                                <p>Type of sandwich made with chicken and avocado.</p>
-                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="pxl-item-img">
-                            <img src="./images/menu9.jpg" alt="">
-
-                        </div>
-                        <div class="pxl-item-desc">
-                            <div class="title">
-                                <h4>Roasted Veggie Chips</h4>
-                                <span class="line"></span>
-                                <span class="price">100$</span>
-
-
-                            </div>
-                            <div class="about">
-                                <p>Type of sandwich made with chicken and avocado.</p>
-                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="pxl-item-img">
-                            <img src="./images/menu10.jpg" alt="">
-
-                        </div>
-                        <div class="pxl-item-desc">
-                            <div class="title">
-                                <h4>Pesto Chicken Bake</h4>
-                                <span class="line"></span>
-                                <span class="price">85$</span>
-
-
-                            </div>
-                            <div class="about">
-                                <p>Type of sandwich made with chicken and avocado.</p>
-                                <button class="btn " onclick="addToCart(mi)">Add To Cart</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section> -->
 
 
 
@@ -397,82 +168,64 @@
     </section>
     <section>
         <div class="items-container">
-            <div class="card-1 card">
-                <img class="product-image" src="~/./images/desert1.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>Citrus Lemonade</span>
-                <span class="product-price">$20</span>
-            </div>
-            <div class="card-2 card">
-                <img class="product-image" src="~/./images/desert2.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>
-                    Chicken Avocado Soup
-                </span>
-                <span class="product-price">$110</span>
-            </div>
-            <div class="card-3 card">
-                <img class="product-image" src="~/./images/desert3.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>
-                    One-Pot Beef with Broccoli
-                </span>
-                <span class="product-price">$120</span>
-            </div>
-            <div class="card-4 card">
-                <img class="product-image" src="~/./images/desert4.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>
-                    Grilled Cheese Crostini
-                </span>
-                <span class="product-price">$80</span>
-            </div>
-            <div class="card-5 card">
-                <img class="product-image" src="~/./images/desert5.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>Chicken Avocado Sandwitch</span>
-                <span class="product-price">$65</span>
-            </div>
+         @foreach (var item in Model.Dessert)
+            {
+                <div class="card-1 card">
+                    <img class="product-image" src="~/./images/@item.Images.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
+                    <span>@item.Title</span>
+                    <span class="product-price">@item.Price.ToString("0.############################")$</span>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="add-to-cart" data-id="@item.Id"><button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="add-to-cart" data-id="@item.Id">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                 
+                </div>
+
+            }
+  
 
 
         </div>
         <div class="items-container">
-            <div class="card-1 card">
-                <img class="product-image" src="~/./images/desert6.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>Grilled Cheese Crostini</span>
-                <span class="product-price">$100</span>
-            </div>
-            <div class="card-2 card">
-                <img class="product-image" src="~/./images/desert7.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>
-                    Spaghetti carbonara
-                </span>
-                <span class="product-price">$117</span>
-            </div>
-            <div class="card-3 card">
-                <img class="product-image" src="~/./images/desert8.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>Beer-Cheeseburger</span>
-                <span class="product-price">$95</span>
-            </div>
-            <div class="card-4 card">
-                <img class="product-image" src="~/./images/desert9.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>
-                    Perfect Scrambled Eggs
-                </span>
-                <span class="product-price">$83</span>
-            </div>
-            <div class="card-5 card">
-                <img class="product-image" src="~/./images/desert10.jpg" alt="">
-                <button class="add-to-cart">Add to cart</button>
-                <span>
-                    Perfect Scrambled Eggs
-                </span>
-                <span class="product-price">$79</span>
-            </div>
+           @foreach (var item in Model.Dessert)
+            {
+                <div class="card-1 card">
+                    <img class="product-image" src="~/./images/@item.Images.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
+                    <span>@item.Title</span>
+                    <span class="product-price">@item.Price.ToString("0.############################")$</span>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="add-to-cart" data-id="@item.Id"><button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="add-to-cart" data-id="@item.Id">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                    }
+                </div>
+            }
+    
 
 
         </div>
