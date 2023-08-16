@@ -46,7 +46,7 @@ namespace FinalProject.Controllers
      
             Order orders = await _context.Orders.FirstOrDefaultAsync();
             List<Starter> starters = await _context.Starters.Include(m => m.Images).Take(5).ToListAsync(); 
-            List<Dessert> desserts = await _context.Desserts.Include(m => m.Images).ToListAsync();
+            List<Dessert> desserts = await _context.Desserts.Include(m => m.Images).Take(5).ToListAsync();
 
             //List<AboutSlider> aboutSliders = await _aboutSliderService.GetAll();
             FoodVM model = new()
