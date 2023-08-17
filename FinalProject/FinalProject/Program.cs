@@ -46,6 +46,8 @@ builder.Services.AddScoped<IMiniPostInterface, MiniPostService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IContactBoxService, ContactBoxService>();
 builder.Services.AddScoped<ISocialService, SocialService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IFoodRecipeService, FoodRecipeService>();
 
 
 var app = builder.Build();

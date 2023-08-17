@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\GULTAJ\OneDrive\Desktop\BackendFinal\FinalProject\FinalProject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Areas/Admin/Views/Contact/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29udGFjdFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Areas/Admin/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Areas/Admin/Views/FoodComment/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRm9vZENvbW1lbnRcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Views/FoodRecipes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFJlY2lwZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Views/Home/Index.cshtml]

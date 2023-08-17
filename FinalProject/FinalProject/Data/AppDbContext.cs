@@ -33,6 +33,10 @@ namespace FinalProject.Data
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<ContactBox> ContactBoxes { get; set; }
         public DbSet<Social> Socials { get; set; }
+        public DbSet<News> Newss { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<RecentBlog> RecentBlogs { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -56,6 +60,10 @@ namespace FinalProject.Data
             modelBuilder.Entity<Contact>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<ContactBox>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Social>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<News>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Author>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<RecentBlog>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Category>().HasQueryFilter(m => !m.SoftDelete);
         }
     }
 }

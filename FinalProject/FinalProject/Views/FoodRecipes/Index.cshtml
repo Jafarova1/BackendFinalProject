@@ -1,0 +1,268 @@
+﻿
+@model FoodRecipeVM
+@{
+    ViewData["Title"] = "Index";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/./css/single.css">
+}
+<body>
+    <section class="article-wrap" style="background-image: url(./images/bg_4.jpg); ">
+        <div class="overlay">
+        </div>
+        <div class="container">
+            <div class="row align-items-end justify-content-center">
+                <div class="col-md-9 pb-5 text-center">
+                    <h1 class="mb-3">Food Recipes</h1>
+                    <p class="items">
+                        <span class="mr-2">
+                            <a href="index.html">Home</a>
+                            <i class="fa-solid fa-angle-right"></i>
+
+                        </span>
+                        <span>
+                            Food Recipes
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="description">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 pr-lg-5">
+                    <div class="sidebar-box">
+                        <div class="form-container">
+                            <form class="form">
+                                <input id="search" type="text" class="input" placeholder="search..." />
+                            </form>
+
+                        </div>
+                        <div class="results-container">
+                            <ul class="results-list" id="list">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-box">
+                        <ul class="categories">
+                            <h3 class="heading mb-4">
+                                Categories
+                            </h3>
+                   @foreach (var item in Model.Categories)
+                            {
+                                <li>
+                                    <a href="">@item.Name</a>
+                                    <span>(@item.Number)</span>
+                                </li>
+                            }
+                    
+
+                        </ul>
+                    </div>
+                    <div class="sidebar-box">
+                        <h3 class="heading">Recent Blog</h3>
+                   @foreach (var item in Model.RecentBlogs)
+                        {
+                            <div class="blog mb-4 d-flex">
+                                <a href="" class="blog-image mr-4">
+                                    <img src="~/./images/@item.Image" alt="">
+                                </a>
+                                <div class="text">
+                                    <h3>@item.Description</h3>
+                                    <div class="meta">
+                                        <div>
+                                            <span class="calendar"><i class="fa-solid fa-calendar"></i></span>
+                                           @item.CreatedDate
+
+                                        </div>
+                                        <div>
+                                            <span>
+                                                <i class="person"><i class="fa-solid fa-user"></i></i>
+                                            </span>
+                                            Admin
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+                   
+
+                    </div>
+                    <div class="sidebar-box">
+                        <h3 class="heading mb-4">Tag Cloud</h3>
+                        <div class="tagcloud">
+                            <a href="" class="tglink">Dish</a>
+                            <a href="" class="tglink">Menu</a>
+                            <a href="" class="tglink">Food</a>
+                            <a href="" class="tglink">Sweet</a>
+                            <a href="" class="tglink">Tasty</a>
+                            <a href="" class="tglink">Delicious</a>
+                            <a href="" class="tglink">Desserts</a>
+                            <a href="" class="tglink">Drinks</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-8">
+                    @foreach (var item in Model.Newss)
+                    {
+                                   <h2 class="mb-3">@item.FirstTitle</h2>
+                        <p>
+                                   @item.FirstDescription
+                        </p>
+                        <p>
+                            <img src="~/./images/@item.Image" alt="">
+                        </p>
+                        <p>
+                            @item.SecondDescription
+                        </p>
+
+                    }
+         
+              
+                    <div class="about-me d-flex p-4 bg-light">
+                        <div class="img mr-5">
+                            <img src="~/./images/@Model.Author.Image" class="image mb-4" alt="">
+
+                        </div>
+                        <div class="desc">
+                            <h3>@Model.Author.FullName</h3>
+                            <p>
+                                @Model.Author.Description
+                            </p>
+
+                        </div>
+
+                    </div>
+                    <div class="pt-5 mt-5">
+                        <h3 class="mb-5">
+                            2 Comments
+
+                        </h3>
+                        <ul class="comment-list">
+                            <li class="comment">
+                                <div class="img">
+                                    <img src="./images/person1.jpg" alt="">
+
+                                </div>
+                                <div class="body">
+                                    <h3>Mary Amelia</h3>
+                                    <div class="meta">
+                                        Mary Amelia
+                                        OCTOBER 03, 2018 AT 2:21PM
+                                    </div>
+                                    <p>
+                                        This place is great! Atmosphere is chill and cool but the staff is also
+                                        really friendly. They know what they’re doing and what they’re talking
+                                        about, and you can tell making the customers happy is their main priority.
+                                        Food is pretty good, some italian classics and some twists, and for their
+                                        prices it’s 100% worth it.
+                                    </p>
+                                    <p>
+                                        <a href="" class="reply">Reply</a>
+                                    </p>
+
+                                </div>
+
+                            </li>
+                            <li class="comment">
+                                <div class="img">
+                                    <img src="./images/person2.jpg" alt="">
+
+                                </div>
+                                <div class="body">
+                                    <h3>Annie Lily</h3>
+                                    <div class="meta">
+                                        Annie Lily
+                                        OCTOBER 03, 2018 AT 2:21PM
+                                    </div>
+                                    <p>
+                                        Excellent food. Menu is extensive and seasonal to a particularly high
+                                        standard. Definitely fine dining. It can be expensive but worth it and they
+                                        do different deals on different nights so it’s worth checking them out
+                                        before you book. Highly recommended.
+                                    </p>
+                                    <p>
+                                        <a href="" class="reply">Reply</a>
+                                    </p>
+
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div id="respond">
+
+                        <h3>Leave a Comment</h3>
+
+                        <form action="post_comment.php" method="post" id="commentform">
+
+                            <label for="comment_author" class="required">Your name</label>
+                            <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+
+                            <label for="email" class="required">Your email;</label>
+                            <input type="email" name="email" id="email" value="" tabindex="2" required="required">
+
+                            <label for="comment" class="required">Your message</label>
+                            <textarea name="comment" id="comment" rows="10" tabindex="4" required="required"></textarea>
+
+                            <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+                            <input name="submit" class="submit" type="submit" value="Submit comment" />
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="advertisment" id="section-counter" style="background-image: url(images/bg_4.jpg);
+        background-position: 50% -189px; filter: grayscale(10%); opacity: 1;">
+        <div class="background-overlay"></div>
+        <div class="container">
+            <!-- <h1>Love the delicious and tasty foods</h1> -->
+            <h1>Subcribe to our Newsletter</h1>
+            <p>
+                A small river named Duden flows by their place and supplies it with the necessary regelialia. It is <br> a
+                paradisematic country, in which roasted parts of sentences fly into your mouth.
+            </p>
+            <div class="row d-flex justify-content-center mt-4 mb-4">
+                <div class="col-md-8">
+                    <form action="">
+                        <div class="form-group d-flex">
+                            <input type="text" placeholder="Enter Email Adress">
+                            <input type="submit" value="Subscribe" class="submitt px-3">
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+@section Scripts {
+    <script src="~/./js/script.js"></script>
+    <script src="~/./js/search.js"></script>
+}
+

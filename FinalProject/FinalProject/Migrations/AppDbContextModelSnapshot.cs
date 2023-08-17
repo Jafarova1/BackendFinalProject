@@ -182,6 +182,37 @@ namespace FinalProject.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("FinalProject.Models.Author", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Authors");
+                });
+
             modelBuilder.Entity("FinalProject.Models.Blog", b =>
                 {
                     b.Property<int>("Id")
@@ -238,6 +269,32 @@ namespace FinalProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BlogInfos");
+                });
+
+            modelBuilder.Entity("FinalProject.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Contact", b =>
@@ -399,6 +456,9 @@ namespace FinalProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("NewsId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("SoftDelete")
                         .HasColumnType("bit");
 
@@ -413,6 +473,8 @@ namespace FinalProject.Migrations
                     b.HasIndex("AppUserId");
 
                     b.HasIndex("DessertId");
+
+                    b.HasIndex("NewsId");
 
                     b.HasIndex("StarterId");
 
@@ -448,6 +510,50 @@ namespace FinalProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MiniPosts");
+                });
+
+            modelBuilder.Entity("FinalProject.Models.News", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirstDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("Newss");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Order", b =>
@@ -533,6 +639,33 @@ namespace FinalProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Profiles");
+                });
+
+            modelBuilder.Entity("FinalProject.Models.RecentBlog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RecentBlogs");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Recipe", b =>
@@ -758,6 +891,10 @@ namespace FinalProject.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("FinalProject.Models.News", null)
+                        .WithMany("FoodComments")
+                        .HasForeignKey("NewsId");
+
                     b.HasOne("FinalProject.Models.Starter", "Starter")
                         .WithMany()
                         .HasForeignKey("StarterId")
@@ -769,6 +906,17 @@ namespace FinalProject.Migrations
                     b.Navigation("Dessert");
 
                     b.Navigation("Starter");
+                });
+
+            modelBuilder.Entity("FinalProject.Models.News", b =>
+                {
+                    b.HasOne("FinalProject.Models.Author", "Author")
+                        .WithMany("Newss")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Author");
                 });
 
             modelBuilder.Entity("FinalProject.Models.StarterMenuImage", b =>
@@ -791,9 +939,19 @@ namespace FinalProject.Migrations
                     b.Navigation("ProductComments");
                 });
 
+            modelBuilder.Entity("FinalProject.Models.Author", b =>
+                {
+                    b.Navigation("Newss");
+                });
+
             modelBuilder.Entity("FinalProject.Models.Dessert", b =>
                 {
                     b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("FinalProject.Models.News", b =>
+                {
+                    b.Navigation("FoodComments");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Starter", b =>
