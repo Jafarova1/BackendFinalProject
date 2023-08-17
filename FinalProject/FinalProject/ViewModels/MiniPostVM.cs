@@ -3,10 +3,10 @@ using FinalProject.Models;
 
 namespace FinalProject.ViewModels
 {
-    public class StoryVM
+    public class MiniPostVM
     {
-        public PaginateData<Story> PaginatedDatas { get; set; }
+        public PaginateData<MiniPost> PaginatedDatas { get; set; }
         public List<Advertisment> Advertisments { get; set; }
-        public List<Story> Stories { get; set; }
+        public List<MiniPost> MiniPosts { get; set; }
     }
 }

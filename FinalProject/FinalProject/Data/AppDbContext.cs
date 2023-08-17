@@ -29,6 +29,7 @@ namespace FinalProject.Data
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Advertisment> Advertisments { get; set; }
         public DbSet<FoodComment> FoodComments { get; set; }
+        public DbSet<MiniPost> MiniPosts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,6 +48,7 @@ namespace FinalProject.Data
             modelBuilder.Entity<StarterMenuImage>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Subscriber>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Story>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<MiniPost>().HasQueryFilter(m => !m.SoftDelete);
         }
     }
 }

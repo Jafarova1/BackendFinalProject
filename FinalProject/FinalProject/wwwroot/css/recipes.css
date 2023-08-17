@@ -162,8 +162,10 @@ a{
         padding-left: 3rem !important;
     }
 }
-.blog .left img{
+.blog .left img {
     height: 380px;
+    width: 507px;
+    margin-top: 50px;
 }
 .recipes .text{
     margin-left: 100px;
@@ -615,6 +617,7 @@ i{
   
   .header .menu-btn:checked ~ .menu {
     max-height: 240px;
+    width:100%
   }
   
   .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -670,10 +673,11 @@ i{
     color: hotpink;
 }
 
-.cart-modal-overlay {
+/*.cart-modal-overlay {
     display: none
 }
 
 .cart-btn {
     display: none
 }
+*/

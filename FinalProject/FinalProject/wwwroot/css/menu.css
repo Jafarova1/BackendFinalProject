@@ -732,6 +732,7 @@ body {
   
   .header .menu-btn:checked ~ .menu {
     max-height: 240px;
+    width:100%
   }
   
   .header .menu-btn:checked ~ .menu-icon .navicon {

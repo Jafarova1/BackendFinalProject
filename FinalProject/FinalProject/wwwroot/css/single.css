@@ -676,6 +676,7 @@ margin-left: 50px;
   
   .header .menu-btn:checked ~ .menu {
     max-height: 240px;
+    width:100%
   }
   
   .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -730,7 +731,7 @@ margin-left: 50px;
   .header .menu a:hover{
     color: hotpink;
 }
-
+/*
 .cart-modal-overlay {
     display: none
 }
@@ -738,3 +739,4 @@ margin-left: 50px;
 .cart-btn {
     display: none
 }
+*/

@@ -42,6 +42,7 @@ builder.Services.AddScoped<IStarterMenuService, StarterMenuService>();
 builder.Services.AddScoped<IDessertMenuService, DessertMenuService>();
 builder.Services.AddScoped<IStoryService, StoryService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IMiniPostInterface, MiniPostService>();
 
 
 var app = builder.Build();

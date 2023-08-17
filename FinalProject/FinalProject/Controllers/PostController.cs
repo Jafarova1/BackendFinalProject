@@ -9,32 +9,30 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject.Controllers
 {
-    public class StoriesController : Controller
+    public class PostController:Controller
     {
         private readonly AppDbContext _context;
         private readonly ILayoutService _layoutService;
-        private readonly IStoryService _storyService;
-
-        public StoriesController(AppDbContext context,ILayoutService layoutService,IStoryService storyService)
+        private readonly IMiniPostInterface _miniPostInterface;
+        public PostController(AppDbContext context,ILayoutService layoutService,IMiniPostInterface miniPostInterface)
         {
-            _context = context;
-            _layoutService = layoutService;
-            _storyService = storyService;
-                
+                _context = context;
+            _layoutService = layoutService; 
+            _miniPostInterface = miniPostInterface;
         }
         public async Task<IActionResult> Index(int page = 1, int take = 3)
         {
-         
-            List<Story> stories = await _storyService.GetAll();
+            //List<Dessert> desserts = await _context.Desserts.Include(m => m.Images).Take(5).ToListAsync();
+            List<MiniPost> posts = await _miniPostInterface.GetAll();
             List<Advertisment> advertisments = await _context.Advertisments.ToListAsync();
-            List<Story> paginateStories = await _storyService.GetPaginatedDatas(page, take);
+            List<MiniPost> paginatePosts = await _miniPostInterface.GetPaginatedDatas(page, take);
             int pageCount = await GetPageCountAsync(take);
-            PaginateData<Story> paginatedDatas = new(paginateStories, page, pageCount);
-            StoryVM model = new()
+            PaginateData<MiniPost> paginatedDatas = new(paginatePosts, page, pageCount);
+            MiniPostVM model = new()
             {
-                Stories = stories,
+               MiniPosts=posts,
                 PaginatedDatas = paginatedDatas,
-                Advertisments= advertisments
+                Advertisments = advertisments
 
 
             };
@@ -42,11 +40,10 @@ namespace FinalProject.Controllers
         }
         private async Task<int> GetPageCountAsync(int take)
         {
-            var storyCount = await _storyService.GetCountAsync();
+            var storyCount = await _miniPostInterface.GetCountAsync();
 
             return (int)Math.Ceiling((decimal)storyCount / take);
         }
-
 
     }
 }

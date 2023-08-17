@@ -504,6 +504,7 @@ i{
   
   .header .menu-btn:checked ~ .menu {
     max-height: 240px;
+    width:100%
   }
   
   .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -559,10 +560,11 @@ i{
     color: black;
   }
 
-.cart-modal-overlay {
+/*.cart-modal-overlay {
     display: none
 }
 
 .cart-btn {
     display: none
 }
+*/
