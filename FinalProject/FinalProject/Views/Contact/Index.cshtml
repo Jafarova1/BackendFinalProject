@@ -1,0 +1,151 @@
+﻿
+@model ContactVM
+@inject UserManager<AppUser> userManager;
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/./css/contact.css">
+}
+<body>
+
+    <section class="article-wrap" style="background-image: url(./images/bg_4.jpg); ">
+        <div class="overlay">
+        </div>
+        <div class="container">
+            <div class="row align-items-end justify-content-center">
+                <div class="col-md-9 pb-5 text-center">
+                    <h1 class="mb-3">Contact Us</h1>
+                    <p class="items">
+                        <span class="mr-2">
+                            <a href="index.html">Home</a>
+                            <i class="fa-solid fa-angle-right"></i>
+
+                        </span>
+                        <span>
+                            Contact Us
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex">
+                    <div class="map">
+                        <div class="image">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.274257380938!2d-70.56068388481569!3d41.45496659976631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e52963ac45bbcb%3A0xf05e8d125e82af10!2sDos%20Mas!5e0!3m2!1sen!2sus!4v1671220374408!5m2!1sen!2sus"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-6 contactform ">
+                    <span class="subheading">Contact Us</span>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form  method="post" class="form" asp-action="PostComment">
+                        <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" asp-for="Name" value="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).FirstName" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" asp-for="Email" value="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).Email" required>
+
+                        <label for="email">Subject:</label>
+                        <input type="text" id="subject" name="subject" >
+
+
+                        <label for="comments">Comments:</label>
+                        <textarea asp-for="Message" id="comments" name="comments" rows="4"></textarea>
+
+                        <button type="submit">Submit Reservation</button>
+                    </form>
+                    }
+                    else
+                    {
+                        <form class="elementor-form" method="post" asp-controller="Account" asp-action="Login">
+                            <div class="input-area">
+                                <input type="text" placeholder="Your FirstName *">
+                                <input placeholder="Phone Number">
+                            </div>
+                            <div class="input-area">
+                                <input type="text" placeholder="Your Email">
+                            </div>
+                            <textarea placeholder="Your Message"></textarea>
+                            <button type="submit">Submit Reservation</button>
+                        </form>
+                    }
+       
+                   
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="icons">
+        <div class="container">
+            <div class="row d-flex">
+             @foreach (var item in Model.ContactBoxes)
+                {
+                    <div class="col-md-3">
+                        <div class="box p-4 text-center">
+                            <div class="icon  align-items-center justify-content-center">
+                                <span><i class="fa-solid @item.Icon"></i></span>
+                                <h3 class="mb-4">@item.Title</h3>
+                            </div>
+                            <p class="txt">@Model.Settings["Address"]</p>
+                        </div>
+
+                    </div>
+                }
+           
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="advertisment" id="section-counter" style="background-image: url(images/bg_4.jpg);
+        background-position: 50% -189px; filter: grayscale(10%); opacity: 1;">
+        <div class="background-overlay"></div>
+        <div class="container">
+            <!-- <h1>Love the delicious and tasty foods</h1> -->
+            <h1>Subcribe to our Newsletter</h1>
+            <p>
+                A small river named Duden flows by their place and supplies it with the necessary regelialia. It is <br> a
+                paradisematic country, in which roasted parts of sentences fly into your mouth.
+            </p>
+            <div class="row d-flex justify-content-center mt-4 mb-4">
+                <div class="col-md-8">
+                    <form action="">
+                        <div class="form-group d-flex">
+                            <input type="text" placeholder="Enter Email Adress">
+                            <input type="submit" value="Subscribe" class="submitt px-3">
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</body>
+
+@section Scripts {
+    <script src="~/./js/script.js"></script>
+    <script src="~/./js/search.js"></script>
+}

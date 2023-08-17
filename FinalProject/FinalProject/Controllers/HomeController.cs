@@ -30,6 +30,7 @@ namespace FinalProject.Controllers
             IEnumerable<Post> posts = await _context.Posts.Where(m => !m.SoftDelete).ToListAsync();
             IEnumerable<Recipe> recipes = await _context.Recipes.Where(m => !m.SoftDelete).ToListAsync();
             List<AboutSlider> aboutSliders = await _aboutSliderService.GetAll();
+            List<Advertisment> advertisments = await _context.Advertisments.ToListAsync();
             AboutUs aboutUs = await _context.AboutUss.FirstOrDefaultAsync();
             HomeVM homeModel = new()
             {
@@ -37,7 +38,8 @@ namespace FinalProject.Controllers
                 Posts = posts,
                 Recipes = recipes,
                 AboutSliders = aboutSliders,
-                AboutUs=aboutUs
+                AboutUs=aboutUs,
+                Advertisments=advertisments
 
             };
             return View(homeModel);

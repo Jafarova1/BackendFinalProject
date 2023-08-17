@@ -1,4 +1,4 @@
-﻿@model LayoutVM
+﻿@model FooterVM
 <footer>
     <div class="container">
         <div class="row mb-5">
@@ -10,27 +10,17 @@
                         there live the blind texts.
                     </p>
                     <ul class="social float-md-left mt-5 d-flex">
-                        <li>
-                            <a href="">
-                                <span class="icon-twitter">
-                                    <i class="fa-brands fa-twitter"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span class="icon-facebook">
-                                    <i class="fa-brands fa-facebook"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span class="icon-instagram">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </span>
-                            </a>
-                        </li>
+                      @foreach (var item in Model.Socials)
+                        {
+                            <li>
+                                <a href="">
+                                    <span class="icon-twitter">
+                                        <i class="fa-brands @item.Icon"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        }
+                    
                     </ul>
 
                 </div>

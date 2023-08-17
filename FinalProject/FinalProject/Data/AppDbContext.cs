@@ -30,6 +30,10 @@ namespace FinalProject.Data
         public DbSet<Advertisment> Advertisments { get; set; }
         public DbSet<FoodComment> FoodComments { get; set; }
         public DbSet<MiniPost> MiniPosts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<ContactBox> ContactBoxes { get; set; }
+        public DbSet<Social> Socials { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -49,6 +53,9 @@ namespace FinalProject.Data
             modelBuilder.Entity<Subscriber>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Story>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<MiniPost>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Contact>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<ContactBox>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Social>().HasQueryFilter(m => !m.SoftDelete);
         }
     }
 }

@@ -12,5 +12,6 @@ namespace FinalProject.ViewModels
         public Dictionary<string, string> SettingDatas { get; set; }
         public AboutUs AboutUs { get; set; }
         public List<AboutSlider> AboutSliders { get; set; }
+        public List<Advertisment> Advertisments { get; set; }
     }
 }

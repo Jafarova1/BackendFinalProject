@@ -1,22 +1,19 @@
 ﻿using FinalProject.Data;
 using FinalProject.Models;
 using FinalProject.Services.Interfaces;
-using FinalProject.ViewModels;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
 
 namespace FinalProject.Services
 {
-    public class LayoutService : ILayoutService
+    public class SocialService:ISocialService
     {
         private readonly AppDbContext _context;
 
-        public LayoutService(AppDbContext context)
+        public SocialService(AppDbContext context)
         {
             _context = context;
         }
-        public Dictionary<string, string> GetSettingDatas() => _context.Settings.AsEnumerable().ToDictionary(m => m.Key, m => m.Value);
         public async Task<List<Social>> GetAll() => await _context.Socials.ToListAsync();
+        public async Task<Social> GetSocialById(int? id) => await _context.Socials.FirstOrDefaultAsync(m => m.Id == id);
     }
 }

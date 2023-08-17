@@ -246,27 +246,17 @@
                                 <div class="heading mb-4">
                           
                                     <ul class="category-image">
+                                      @foreach (var item in Model.Advertisments)
+                                    {
                                         <li>
                                             <a href="menu.html"
-                                                class="img d-flex align-items-center justify-content-center text-center">
-                                                <img src="~/images/sliderimage1.jpg" alt="">
+                                               class="img d-flex align-items-center justify-content-center text-center">
+                                                <img src="~/images/@item.Image" alt="">
                                             </a>
-                                        <a href="menu.html"><h3>Foods</h3></a>
+                                            <a href="menu.html"><h3>@item.Title</h3></a>
                                         </li>
-                                        <li>
-                                            <a href="recipes.html"
-                                                class="img d-flex align-items-center justify-content-center text-center">
-                                                <img src="~/images/category-2.jpg" alt="">
-                                            </a>
-                                        <a href="recipes.html"><h3>Lifestyle</h3></a>
-                                        </li>
-                                        <li>
-                                            <a href="stories.html"
-                                                class="img d-flex align-items-center justify-content-center text-center">
-                                                <img src="~/images/image_7.jpg" alt="">
-                                            </a>
-                                           <a href="stories.html"><h3>Others</h3></a>
-                                        </li>
+                                    }
+                                   
                                     </ul>
                                 </div>
 

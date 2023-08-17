@@ -4,25 +4,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject.ViewComponents
 {
-    public class FooterViewComponent: ViewComponent
+    public class HeaderViewComponent:ViewComponent
     {
         private readonly ILayoutService _layoutService;
-        private readonly ISocialService _socialService;
-
-        public FooterViewComponent(ILayoutService layoutService, ISocialService socialService)
+        public HeaderViewComponent(ILayoutService layoutService)
         {
-            _layoutService = layoutService;
-            _socialService = socialService; 
+                _layoutService = layoutService;
         }
-
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            FooterVM model = new FooterVM()
+            LayoutVM model = new()
             {
                 SettingDatas = _layoutService.GetSettingDatas(),
-                Socials = await _socialService.GetAll()
             };
-
             return await Task.FromResult(View(model));
         }
     }
