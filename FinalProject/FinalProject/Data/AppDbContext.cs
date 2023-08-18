@@ -37,6 +37,7 @@ namespace FinalProject.Data
         public DbSet<Author> Authors { get; set; }
         public DbSet<RecentBlog> RecentBlogs { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<AdditionalFood> AdditionalFoods { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -64,6 +65,7 @@ namespace FinalProject.Data
             modelBuilder.Entity<Author>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<RecentBlog>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Category>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<AdditionalFood>().HasQueryFilter(m => !m.SoftDelete);
         }
     }
 }

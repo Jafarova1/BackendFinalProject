@@ -202,9 +202,11 @@ form {
   }
 
 
-  .contact form{
-    width: 100%;
-  }
+.contact form {
+  
+    width: 90%;
+    margin-left: 50px;
+}
   .contact .subheading{
     color: #f67979;
     position: relative;

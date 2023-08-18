@@ -1,4 +1,5 @@
 using FinalProject.Data;
+using FinalProject.Helpers;
 using FinalProject.Models;
 using FinalProject.Services;
 using FinalProject.Services.Interfaces;
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -33,6 +36,8 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = true;
 });
 
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+
 builder.Services.AddScoped<IBlogService, BlogService>();
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<ISubscribeService, SubscribeService>();
@@ -48,6 +53,8 @@ builder.Services.AddScoped<IContactBoxService, ContactBoxService>();
 builder.Services.AddScoped<ISocialService, SocialService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IFoodRecipeService, FoodRecipeService>();
+builder.Services.AddScoped<IAdditionalFoodService, AdditionalFoodService>();
+
 
 
 var app = builder.Build();

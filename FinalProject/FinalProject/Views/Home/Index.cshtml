@@ -25,7 +25,9 @@
                                                 You can add more paragraphs or any other content here.
                                             </p>
                                         </div>
-                                        <p><a href="stories.html" id="read-more-link" class="btn btn-black px-3 px-md-4 py-3">Read
+                                    <p>
+                                        <a asp-controller="FoodRecipes" asp-action="Index" id="read-more-link" class="btn btn-black px-3 px-md-4 py-3">
+                                            Read
                                                 More <span class="icon-arrow_forward ml-lg-4"
                                                     style="background-color: red;"></span></a></p>
 
@@ -64,7 +66,7 @@
                              @foreach (var blog in Model.Blogs)
                             {
                                 <div class="menu pr-md-4 text-center">
-                                    <a href="single.html">
+                                    <a asp-controller="Menu" asp-action="Index">
                                         <div class="img">
                                             <img src="~/./images/@blog.Image" alt="">
                                         </div>
@@ -99,7 +101,7 @@
                     </div>
                     <div
                         class="image col-sm-5  d-flex justify-content-center align-items-center justify-content-md-end">
-                     <a href="single.html"><img src="~/./images/@Model.AboutUs.FirstImage" alt=""></a>
+                    <a asp-controller="FoodRecipes" asp-action="Index"><img src="~/./images/@Model.AboutUs.FirstImage" alt=""></a>
                         
                     </div>
 
@@ -148,7 +150,7 @@
                         {
                             <div class="col-md-4 post-animate">
                                 <div class="blog-entry">
-                                    <a href="single.html" class="img-2">
+                                    <a asp-controller="Menu" asp-action="Index" class="img-2">
                                         <img src="~/images/@post.Image"
                                              class="img-fluid">
                                     </a>
@@ -158,7 +160,7 @@
                                         </p>
                                         <h3>@post.Description</h3>
                                         <p class="mb-0">
-                                            <a href="single.html" class="btn btn-black py-2">
+                                            <a asp-controller="FoodRecipes" asp-action="Index" class="btn btn-black py-2">
                                                 Read More <span class="icon-arrow_forward ml-4"></span>
                                             </a>
                                         </p>
@@ -222,9 +224,9 @@
                                         <img src="~/images/@recipe.Image" alt="">
                                         <div class="desc">
                                             <span class="subheading">@recipe.Title</span>
-                                            <h3><a href="recipes.html">@recipe.Description</a></h3>
+                                            <h3><a asp-controller="Menu" asp-action="Index">@recipe.Description</a></h3>
                                             <p class="mb-0">
-                                                <a href="" class="button btn btn-primary">Read More</a>
+                                                <a asp-controller="FoodRecipes" asp-action="Index" class="button btn btn-primary">Read More</a>
                                             </p>
 
                                         </div>
@@ -249,11 +251,11 @@
                                       @foreach (var item in Model.Advertisments)
                                     {
                                         <li>
-                                            <a href="menu.html"
+                                            <a asp-controller="Menu" asp-action="Index"
                                                class="img d-flex align-items-center justify-content-center text-center">
                                                 <img src="~/images/@item.Image" alt="">
                                             </a>
-                                            <a href="menu.html"><h3>@item.Title</h3></a>
+                                            <a asp-controller="Menu" asp-action="Index"><h3>@item.Title</h3></a>
                                         </li>
                                     }
                                    

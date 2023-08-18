@@ -496,6 +496,8 @@ a {
 .sidebar-box img {
     width: 100%;
     height: auto;
+ 
+
 }
 
 .search-form {
@@ -551,7 +553,7 @@ a {
 } */
 .category-image img {
     height: 110%;
-
+ 
 }
 
 .category-image h3 {
@@ -802,7 +804,7 @@ footer .social {
 
 .submit {
     color: #fff !important;
-    background: #000000 !important;
+    background: #ff6e7f !important;
     border-radius: 0px 5px 5px 0px;
     font-size: 16px;
 }

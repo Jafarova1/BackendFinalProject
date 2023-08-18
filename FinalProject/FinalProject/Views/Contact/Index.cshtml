@@ -77,8 +77,11 @@
                         <form class="elementor-form" method="post" asp-controller="Account" asp-action="Login">
                             <div class="input-area">
                                 <input type="text" placeholder="Your FirstName *">
-                                <input placeholder="Phone Number">
+                           
                             </div>
+                            <div class="input-area">
+                                <input type="number" placeholder="Phone Number">
+                                </div>
                             <div class="input-area">
                                 <input type="text" placeholder="Your Email">
                             </div>
@@ -105,7 +108,7 @@
                                 <span><i class="fa-solid @item.Icon"></i></span>
                                 <h3 class="mb-4">@item.Title</h3>
                             </div>
-                            <p class="txt">@Model.Settings["Address"]</p>
+                            <p class="txt">@Model.Settings["Adress"]</p>
                         </div>
 
                     </div>
