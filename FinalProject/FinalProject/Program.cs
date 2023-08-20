@@ -54,6 +54,8 @@ builder.Services.AddScoped<ISocialService, SocialService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IFoodRecipeService, FoodRecipeService>();
 builder.Services.AddScoped<IAdditionalFoodService, AdditionalFoodService>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<EmailSettings>();
 
 
 
@@ -74,8 +76,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 app.MapControllerRoute(
-    name: "areas",
-    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+     name: "areas",
+      pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

@@ -1,13 +1,18 @@
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
+$(document).ready(function () {
+    const togglePassword = document.querySelector("#login .area-password .eyes");
+    const password = document.querySelector("#login .area-password input");
 
+    togglePassword.addEventListener("click", function () {
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
 
-signUpButton.addEventListener('click', () => {
-    container.classList.add("right-panel-active");
-});
+        this.classList.toggle("bi-eye");
+    });
 
+    // prevent form submit
+    const form = document.querySelector("form");
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+    });
 
-signInButton.addEventListener('click', () => {
-    container.classList.remove("right-panel-active");
-});
+})

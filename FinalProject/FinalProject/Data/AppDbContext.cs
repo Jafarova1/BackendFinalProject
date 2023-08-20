@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
 
         public AppDbContext(DbContextOptions<AppDbContext> option) : base(option)
@@ -38,6 +38,9 @@ namespace FinalProject.Data
         public DbSet<RecentBlog> RecentBlogs { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<AdditionalFood> AdditionalFoods { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<FoodCart> FoodCarts { get; set; }
+        public DbSet<AccountPageImage> AccountPageImages { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -66,6 +69,9 @@ namespace FinalProject.Data
             modelBuilder.Entity<RecentBlog>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Category>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<AdditionalFood>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Cart>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<FoodCart>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<AccountPageImage>().HasQueryFilter(m => !m.SoftDelete);
         }
     }
 }

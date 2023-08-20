@@ -740,3 +740,10 @@ margin-left: 50px;
     display: none
 }
 */
+.subscribe-btn button {
+    width: 100%;
+    height: 40px;
+    background-color: pink;
+    border-color: pink;
+    border-radius: 10px;
+}

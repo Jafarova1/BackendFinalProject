@@ -1,4 +1,5 @@
 ﻿@model HomeVM
+@inject UserManager<AppUser> userManager
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -119,7 +120,7 @@
                     paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                     <div class="row d-flex justify-content-center mt-4 mb-4">
                         <div class="col-md-8">
-                    <form method="post" asp-controller="Home" asp-action="PostSubscribe">
+                  @*  <form method="post" asp-controller="Home" asp-action="PostSubscribe">
                                 <div class="form-group d-flex">
                             <input type="text" placeholder="Enter Email Adress" asp-for="Email">
                             <span class="text-danger" asp-validation-for="Email">@ViewBag.error</span>
@@ -127,7 +128,39 @@
 
 
                                 </div>
-                            </form>
+                            </form>*@
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form method="post" asp-controller="Home" asp-action="PostSubscribe">
+                            <div class="subscribe" id="">
+                                <span class="email-input">
+                                    <input asp-for="Email" required type="text" placeholder="E-MAIL" placeholder="YOUR E-MAIL ADDRESS...">
+                                    <span class="text-danger" asp-validation-for="Email">@ViewBag.error</span>
+
+                                </span>
+                                <div class="subscribe-btn">
+                                    <button type="submit">Subscribe</button>
+                                </div>
+                            </div>
+                        </form>
+                    }
+                    else
+                    {
+                        <div class="subscribe" id="">
+                            <span class="email-input">
+                                <input asp-for="Email" required type="text" placeholder="E-MAIL" placeholder="YOUR E-MAIL ADDRESS...">
+                                <span class="text-danger" asp-validation-for="Email">@ViewBag.error</span>
+
+                            </span>
+                            <a asp-controller="Account" asp-action="Login">
+                                <div class="subscribe-btn">
+                                    <button type="submit">Subscribe</button>
+                                </div>
+                            </a>
+
+                        </div>
+                    }
+
                         </div>
 
                     </div>
@@ -280,7 +313,7 @@
                     <div class="col-md-7">
                         <span class="subheading">Book a Table</span>
                         <h2>Reservation Form</h2>
-                        <form action="#" method="post">
+                @*        <form action="#" method="post">
                           <label for="name">Name:</label>
                           <input type="text" id="name" name="name" required>
                     
@@ -300,7 +333,48 @@
                           <textarea id="comments" name="comments" rows="4"></textarea>
                     
                           <button type="submit">Submit Reservation</button>
+                        </form>*@
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form method="post" asp-controller="About" asp-action="PostSubscribe">
+                            <div class="subscribe" id="">
+                                <span class="email-input">
+                                    <input asp-for="Email" required type="text" placeholder="E-MAIL" placeholder="YOUR E-MAIL ADDRESS...">
+                                      <input asp-for="Name" required type="text" placeholder="Name" >
+                                    <input asp-for="DateTime" required type="date" placeholder="date" >
+                                    <input asp-for="NumberOfGuests" required type="number" placeholder="Number of Guests" >
+                                    <input asp-for="Comments" required type="text" placeholder="Comments" >
+                                    <span class="text-danger" asp-validation-for="Email">@ViewBag.error</span>
+
+                                </span>
+                                <div class="subscribe-btn">
+                                    <button type="submit">Submit Reservation</button>
+                                </div>
+                            </div>
                         </form>
+                    }
+                    else
+                    {
+                        <div class="subscribe" id="">
+                            <span class="email-input">
+                                <input asp-for="Email" required type="text" placeholder="E-MAIL" >
+                                <input asp-for="Name" required type="text" placeholder="Name" >
+                                <input asp-for="DateTime" required type="date" placeholder="date" >
+                                <input asp-for="NumberOfGuests" required type="number" placeholder="Number of Guests" >
+                                <label for="comments">Comments:</label>
+                                <textarea id="comments" name="comments" rows="4"></textarea>
+                       
+                                <span class="text-danger" asp-validation-for="Email">@ViewBag.error</span>
+
+                            </span>
+                            <a asp-controller="account" asp-action="Login">
+                                <div class="subscribe-btn">
+                                    <button type="submit">Submit Reservation</button>
+                                </div>
+                            </a>
+
+                        </div>
+                    }
                     </div>
 
                 </div>

@@ -1,0 +1,58 @@
+﻿@model List<Subscriber>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="advertisment" id="section-counter" style="background-image: url(images/bg_4.jpg);
+        background-position: 50% -189px; filter: grayscale(10%); opacity: 1;">
+    <div class="background-overlay"></div>
+    <div class="container">
+        <!-- <h1>Love the delicious and tasty foods</h1> -->
+        <h1>Subcribe to our Newsletter</h1>
+        <p>
+            A small river named Duden flows by their place and supplies it with the necessary regelialia. It is <br> a
+            paradisematic country, in which roasted parts of sentences fly into your mouth.
+        </p>
+        <div class="row d-flex justify-content-center mt-4 mb-4">
+            <div class="table-responsive">
+                @if (Model.Count() > 0)
+                {
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th style="font-size: 20px;">Email</th>
+                                <th style="font-size: 20px;">Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var contact in Model)
+                            {
+                                <tr data-id="@contact.Id">
+                                    <td>@contact.Email</td>
+                                    <td>
+                                        @if (User.IsInRole("SuperAdmin"))
+                                        {
+                                            <a class="delete-subscribe" data-toggle="tooltip" data-original-title="Remove">
+                                                <i class="fa-solid fa-trash" style="color: #da3e45;"></i>
+                                            </a>
+                                        }
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/Admin/js/index.js"></script>
+
+}
+
+

@@ -2,6 +2,7 @@
 using FinalProject.Models;
 using FinalProject.Services.Interfaces;
 using FinalProject.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject.Controllers
@@ -9,31 +10,30 @@ namespace FinalProject.Controllers
     public class ContactController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly ILayoutService _layoutService;
-        private readonly IContactService _contactService;
-        private readonly IContactBoxService _contactBoxService;
-        public ContactController(AppDbContext context,ILayoutService layoutService,IContactService contactService,IContactBoxService contactBoxService)
+   
+        public ContactController(AppDbContext context )
         {
             _context = context;
-            _layoutService = layoutService;
-            _contactService = contactService;
-            _contactBoxService = contactBoxService;
-                
+       
         }
-
         public async Task<IActionResult> Index()
         {
-            List<ContactBox> contactBoxes = await _contactBoxService.GetAll();
+    
+        
+            Dictionary<string, string> settings = _context.Settings.AsEnumerable().ToDictionary(m => m.Key, m => m.Value);
+
             ContactVM model = new()
             {
-                ContactBoxes = contactBoxes,
-                Settings = _layoutService.GetSettingDatas(),
-
-
+             
+                Settings = settings,
+               
             };
             return View(model);
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> PostComment(ContactVM model)
         {
             if (!ModelState.IsValid) return RedirectToAction("Index", model);
@@ -47,7 +47,9 @@ namespace FinalProject.Controllers
 
             await _context.Contacts.AddAsync(contact);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
     }
+
 }
+

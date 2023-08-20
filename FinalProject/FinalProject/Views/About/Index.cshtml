@@ -1,4 +1,5 @@
 ﻿@model AboutVM
+@inject UserManager<AppUser> userManager
 @{
     ViewData["Title"] = "Index";
 }
@@ -159,13 +160,37 @@
                 </p>
                 <div class="row d-flex justify-content-center mt-4 mb-4">
                     <div class="col-md-8">
-                        <form action="">
-                            <div class="form-group d-flex">
-                                <input type="text" placeholder="Enter Email Adress">
-                                <input type="submit" value="Subscribe" class="submitt px-3">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <form method="post" asp-controller="About" asp-action="PostSubscribe">
+                                <div class="subscribe" id="">
+                                    <span class="email-input">
+                                        <input asp-for="Email" required type="text" placeholder="E-MAIL" placeholder="YOUR E-MAIL ADDRESS...">
+                                        <span class="text-danger" asp-validation-for="Email">@ViewBag.error</span>
+
+                                    </span>
+                                    <div class="subscribe-btn">
+                                        <button type="submit">Subscribe</button>
+                                    </div>
+                                </div>
+                            </form>
+                        }
+                        else
+                        {
+                            <div class="subscribe" id="">
+                                <span class="email-input">
+                                    <input asp-for="Email" required type="text" placeholder="E-MAIL" placeholder="YOUR E-MAIL ADDRESS...">
+                                    <span class="text-danger" asp-validation-for="Email">@ViewBag.error</span>
+
+                                </span>
+                                <a asp-controller="account" asp-action="Login">
+                                    <div class="subscribe-btn">
+                                        <button type="submit">Subscribe</button>
+                                    </div>
+                                </a>
 
                             </div>
-                        </form>
+                        }
                     </div>
 
                 </div>

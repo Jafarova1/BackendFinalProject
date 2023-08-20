@@ -9,5 +9,8 @@ namespace FinalProject.ViewModels.FoodRecipe
         public List<RecentBlog> RecentBlogs { get; set; }
         public List<News> Newss { get; set; }
         public Author Author { get; set; }
+        public string Email { get; set; }
+        public string Name { get; set; }
+        public string Comments { get; set; }
     }
 }

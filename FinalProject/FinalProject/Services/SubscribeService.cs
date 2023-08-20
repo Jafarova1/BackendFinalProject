@@ -13,8 +13,13 @@ namespace FinalProject.Services
         {
             _context = context;
         }
-        public async Task<List<Subscriber>> GetAll() => await _context.Subscribers.ToListAsync();
-
-        public async Task<Subscriber> GetSubscribeById(int? id) => await _context.Subscribers.FirstOrDefaultAsync(m => m.Id == id);
+        public async Task<List<Subscriber>> GetAllAsync()
+        {
+            return await _context.Subscribers.ToListAsync();
+        }
+        public async Task<Subscriber> GetByIdAsync(int? id)
+        {
+            return await _context.Subscribers.FirstOrDefaultAsync(b => b.Id == id);
+        }
     }
 }

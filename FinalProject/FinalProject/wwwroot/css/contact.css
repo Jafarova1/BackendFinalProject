@@ -292,7 +292,7 @@ form {
        background-size: cover;
        width: 100%;
        height: 350px;
-       top: 100px;
+       top: 0;
        background-attachment: fixed;
        margin-top: 20px;
        overflow: hidden;
@@ -326,6 +326,13 @@ form {
        margin-right: -15px;
        margin-left: -15px;
    }
+    .advertisment button {
+        width: 100px;
+        height: 40px;
+        background-color: pink;
+        border-color: pink;
+        border-radius: 3px;
+    }
    
    
    .col-md{
