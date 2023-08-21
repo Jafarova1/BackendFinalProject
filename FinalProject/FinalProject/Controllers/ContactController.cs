@@ -4,6 +4,7 @@ using FinalProject.Services.Interfaces;
 using FinalProject.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject.Controllers
 {
@@ -21,11 +22,13 @@ namespace FinalProject.Controllers
     
         
             Dictionary<string, string> settings = _context.Settings.AsEnumerable().ToDictionary(m => m.Key, m => m.Value);
+            List<ContactBox> contactBoxes = await _context.ContactBoxes.ToListAsync();
 
             ContactVM model = new()
             {
              
                 Settings = settings,
+                ContactBoxes = contactBoxes
                
             };
             return View(model);

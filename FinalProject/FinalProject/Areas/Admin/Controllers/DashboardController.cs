@@ -8,9 +8,13 @@ namespace FinalProject.Areas.Admin.Controllers
     [Authorize(Roles = "SuperAdmin,Admin")]
     public class DashboardController:Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(string viewName, string controllerName)
         {
-            return View();
+            if (viewName == "Index" && controllerName == "Dashboard")
+            {
+                return View();
+            }
+            return RedirectToAction("AdminLogin", "Account");
         }
     }
 }

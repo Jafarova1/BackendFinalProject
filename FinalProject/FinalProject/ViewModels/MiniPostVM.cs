@@ -8,5 +8,6 @@ namespace FinalProject.ViewModels
         public PaginateData<MiniPost> PaginatedDatas { get; set; }
         public List<Advertisment> Advertisments { get; set; }
         public List<MiniPost> MiniPosts { get; set; }
+        public string Email { get; set; }
     }
 }

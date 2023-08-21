@@ -573,9 +573,15 @@ color:white;
     }
   }
 
-  .header .menu{
-    margin-top: 20px;
-  }
+.header .menu {
+    /*   margin-top: 20px;*/
+    /*margin-top: 20px;*/
+    position: relative;
+    margin-right: 240px;
+    background-color: white;
+    /*    bottom: 60px;*/
+    left: 150px;
+}
   .header a:hover{
     color: black;
 

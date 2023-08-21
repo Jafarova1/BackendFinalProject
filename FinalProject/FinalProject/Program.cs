@@ -56,6 +56,8 @@ builder.Services.AddScoped<IFoodRecipeService, FoodRecipeService>();
 builder.Services.AddScoped<IAdditionalFoodService, AdditionalFoodService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<EmailSettings>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddSingleton<ISettingService, SettingService>();
 
 
 

@@ -1,0 +1,51 @@
+﻿@model AboutUs
+@{
+    ViewData["Title"] = "Detail";
+}
+<div class="container my-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="text-align: center;">
+                    First-Image
+                </th>
+                <th style="text-align: center;">
+                    Second-Image
+                </th>
+                <th style="text-align: center;">
+                    Title
+                </th>
+                <th style="text-align: center;">
+                    FirstDescription;
+                </th>
+                <th style="text-align: center;">
+                    SecondDescription;
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="py-1" style="padding: 0px;text-align: center;">
+                    <img src="~/images/@Model.FirstImage" style="width: 94%;height:200px" />
+                </td>
+                <td class="py-1" style="padding: 0px;text-align: center;">
+                    <img src="~/images/@Model.SecondtImage" style="width: 94%;height:200px" />
+                </td>
+                <td class="py-1" style="text-align: center;">
+                    @Model.Title
+                </td>
+                <td class="py-1" style="width: 372px;text-align: center;">
+                    @Model.FirstDescription
+                </td>
+                <td class="py-1" style="width: 372px;text-align: center;">
+                    @Model.SecondDescription
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn mt-3" style="background: #696cffd1;color:#fff;" asp-action="Index">Back</a>
+</div>
+
+
+
+

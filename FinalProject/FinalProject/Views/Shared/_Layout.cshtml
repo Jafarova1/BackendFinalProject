@@ -1,4 +1,4 @@
-﻿
+﻿@inject UserManager<AppUser> userManager;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,12 +59,33 @@
             <li class="nav-item">
                 <a asp-controller="Contact" asp-action="Index" class="nav-link">Contact</a>
             </li>
-            <li class="nav-item">
-                <a asp-controller="Account" asp-action="Login" class="nav-link">Login</a>
-            </li>
-            <li class="nav-item">
-                <a asp-controller="Account" asp-action="Register" class="nav-link">Register</a>
-            </li>
+      @* 
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li class=""><a class="px-1" href="">@Model.UserFullName</a></li>
+                <li><a asp-controller="Account" asp-action="Logout" class="register">LogOut</a></li>
+            }
+            else
+            {
+                <li><a asp-controller="Account" asp-action="Login" class="register">Login / Register</a></li>
+            }*@
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+            }
+            else
+            {
+                <form asp-controller="Account" asp-action="Logout" asp-route-userId="@userManager.Users.Where(u=>u.UserName==User.Identity.Name).FirstOrDefault().Id" method="post">
+
+                <li>
+                    <button style="border:none; color: #b97a56; background: transparent; " type="submit">Logout</button>
+                </li>
+                </form>
+
+                <li> <a href="#">@User.Identity.Name</a></li>
+            }
+
         </ul>
 
         <div class="cart-modal-overlay">

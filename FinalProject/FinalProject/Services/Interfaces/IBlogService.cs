@@ -5,11 +5,7 @@ namespace FinalProject.Services.Interfaces
 {
     public interface IBlogService
     {
-        Task<List<Blog>> GetAllAsync();
-        Task<Blog> GetByIdAsync(int id);
-        Task<List<BlogVM>> GetAllMappedDatasAsync();
-        Task CreateAsync(List<IFormFile> images);
-        Task DeleteAsync(int id);
-        Task EditAsync(Blog blog, IFormFile newImage);
+        Task<List<Blog>> GetAll();
+        Task<Blog> GetById(int? id);
     }
 }
