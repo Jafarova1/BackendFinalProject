@@ -56,10 +56,10 @@ builder.Services.AddScoped<IFoodRecipeService, FoodRecipeService>();
 builder.Services.AddScoped<IAdditionalFoodService, AdditionalFoodService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<EmailSettings>();
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddSingleton<IAuthorService, AuthorService>();
-builder.Services.AddSingleton<IAdvertismentService, AdvertismentService>();
-builder.Services.AddSingleton<IRecentBlogService, RecentBlogService>();
+//builder.Services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<IAuthorService, AuthorService>();
+builder.Services.AddScoped<IAdvertismentService, AdvertismentService>();
+builder.Services.AddScoped<IRecentBlogService, RecentBlogService>();
 
 //builder.Services.AddSingleton<ISettingService, SettingService>();
 

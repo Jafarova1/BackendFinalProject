@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWJvdXRVc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Areas/Admin/Views/Account/AddRoleToUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxBZGRSb2xlVG9Vc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Areas/Admin/Views/Account/AdminLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxBZG1pbkxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -214,6 +218,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Areas/Admin/Views/RecentBlog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVjZW50QmxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Areas/Admin/Views/Setting/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2V0dGluZ1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Areas/Admin/Views/Setting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2V0dGluZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/GULTAJ/OneDrive/Desktop/BackendFinal/FinalProject/FinalProject/Areas/Admin/Views/Shared/_Layout.cshtml]
