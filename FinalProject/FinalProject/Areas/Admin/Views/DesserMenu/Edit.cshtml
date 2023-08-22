@@ -1,0 +1,71 @@
+﻿@model DessertMenuEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+@section Css{
+    <link rel="stylesheet" href="~/admin/css/main.css">
+}
+<div class="container my-5">
+    <h4>Images</h4>
+    <div class="d-flex" style="align-content:center">
+        <div class="images d-flex" style="text-align:center">
+
+            @foreach (var productImage in Model.Images)
+            {
+                <div style="width:200px; margin-right:10px;" data-id="@productImage.Id">
+                    <img style="width:200px;height:200px" class="img-fluid" src="~/images/@productImage.Image" />
+                    <div class=" d-flex align-items-center justify-content-center" style="margin-top: 13px;" data-id="@productImage.Id">
+                        <a class="delete-image"><i class="fa-solid fa-trash" style="color: #c60101; cursor:pointer;"></i></a>
+                        <div class="statuses" style=" margin-left:10px;">
+                            @if (productImage.IsMain)
+                            {
+                                <div class="active-status image-status"></div>
+                            }
+                            else
+                            {
+                                <div class="de-active image-status"></div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+
+    <form class="form-sample" asp-action="Edit" asp-route-page="@ViewBag.page" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="formFile" class="form-label my-2">Change Photos</label>
+            <input class="form-control" id="customFile" asp-for="Images" />
+            <span class="text-danger" asp-validation-for="Images"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="formFile" class="form-label my-2">Name</label>
+            <input class="form-control" id="customFile" asp-for="Name" />
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label for="formFile" class="form-label my-2">Price</label>
+            <input class="form-control" id="customFile" asp-for="Price" />
+            <span class="text-danger" asp-validation-for="Price"></span>
+        </div>
+        <div class="form-group">
+            <label for="formFile" class="form-label my-2">Description</label>
+            <textarea class="form-control" id="advert-text" asp-for="Description" rows="5"></textarea>
+            <span class="text-danger" asp-validation-for="Description">@ViewBag.error</span>
+        </div>
+
+
+        <div class="buttons my-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn" style="background-color: #696cff;color:#fff;" asp-route-page="@ViewBag.page" asp-action="Index">Back</a>
+        </div>
+    </form>
+</div>
+@section Scripts {
+
+    <script src="~/admin/js/admin.js"></script>
+}
+

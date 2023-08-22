@@ -13,19 +13,19 @@ namespace FinalProject.Controllers
     {
         private readonly AppDbContext _context;
         private readonly ILayoutService _layoutService;
-        private readonly IMiniPostInterface _miniPostInterface;
-        public PostController(AppDbContext context,ILayoutService layoutService,IMiniPostInterface miniPostInterface)
+        private readonly IMiniPostService _miniPostService;
+        public PostController(AppDbContext context,ILayoutService layoutService,IMiniPostService miniPostService)
         {
                 _context = context;
             _layoutService = layoutService; 
-            _miniPostInterface = miniPostInterface;
+            _miniPostService = miniPostService;
         }
         public async Task<IActionResult> Index(int page = 1, int take = 3)
         {
             //List<Dessert> desserts = await _context.Desserts.Include(m => m.Images).Take(5).ToListAsync();
-            List<MiniPost> posts = await _miniPostInterface.GetAll();
+            List<MiniPost> posts = await _miniPostService.GetAll();
             List<Advertisment> advertisments = await _context.Advertisments.ToListAsync();
-            List<MiniPost> paginatePosts = await _miniPostInterface.GetPaginatedDatas(page, take);
+            List<MiniPost> paginatePosts = await _miniPostService.GetPaginatedDatas(page, take);
             int pageCount = await GetPageCountAsync(take);
             PaginateData<MiniPost> paginatedDatas = new(paginatePosts, page, pageCount);
             MiniPostVM model = new()
@@ -40,7 +40,7 @@ namespace FinalProject.Controllers
         }
         private async Task<int> GetPageCountAsync(int take)
         {
-            var storyCount = await _miniPostInterface.GetCountAsync();
+            var storyCount = await _miniPostService.GetCountAsync();
 
             return (int)Math.Ceiling((decimal)storyCount / take);
         }

@@ -7,7 +7,11 @@ namespace FinalProject.Services.Interfaces
         Task<List<Story>> GetAll();
         Task<int> GetCountAsync();
         Task<List<Story>> GetPaginatedDatas(int page, int take);
-        //Task<Story> GetById(int? id);
+
+        Task<Story> GetById(int? id);
+ 
+
+
 
     }
 }

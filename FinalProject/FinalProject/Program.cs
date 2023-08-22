@@ -47,7 +47,7 @@ builder.Services.AddScoped<IStarterMenuService, StarterMenuService>();
 builder.Services.AddScoped<IDessertMenuService, DessertMenuService>();
 builder.Services.AddScoped<IStoryService, StoryService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
-builder.Services.AddScoped<IMiniPostInterface, MiniPostService>();
+builder.Services.AddScoped<IMiniPostService, MiniPostService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IContactBoxService, ContactBoxService>();
 builder.Services.AddScoped<ISocialService, SocialService>();
@@ -57,7 +57,11 @@ builder.Services.AddScoped<IAdditionalFoodService, AdditionalFoodService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<EmailSettings>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddSingleton<ISettingService, SettingService>();
+builder.Services.AddSingleton<IAuthorService, AuthorService>();
+builder.Services.AddSingleton<IAdvertismentService, AdvertismentService>();
+builder.Services.AddSingleton<IRecentBlogService, RecentBlogService>();
+
+//builder.Services.AddSingleton<ISettingService, SettingService>();
 
 
 

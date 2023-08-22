@@ -7,5 +7,6 @@ namespace FinalProject.Services.Interfaces
         Task<List<AdditionalFood>> GetAll();
         Task<int> GetCountAsync();
         Task<List<AdditionalFood>> GetPaginatedDatas(int page, int take);
+        Task<AdditionalFood> GetById(int? id);
     }
 }

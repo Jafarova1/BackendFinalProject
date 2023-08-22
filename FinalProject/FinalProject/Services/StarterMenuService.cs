@@ -39,7 +39,6 @@ namespace FinalProject.Services
                 Title = model.Name,
                 Description = model.Description,
                 Price = decimalPrice,
-
                 Images = images
             };
 

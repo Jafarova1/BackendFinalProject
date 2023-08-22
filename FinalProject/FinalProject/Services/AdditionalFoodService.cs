@@ -15,6 +15,8 @@ namespace FinalProject.Services
         }
         public async Task<List<AdditionalFood>> GetAll() => await _context.AdditionalFoods.ToListAsync();
 
+        public async Task<AdditionalFood> GetById(int? id) => await _context.AdditionalFoods.FirstOrDefaultAsync(m => m.Id == id);
+
 
         public async Task<int> GetCountAsync() => await _context.AdditionalFoods.CountAsync();
 
