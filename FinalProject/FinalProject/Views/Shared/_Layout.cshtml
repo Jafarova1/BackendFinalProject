@@ -1,4 +1,5 @@
 ﻿@inject UserManager<AppUser> userManager;
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +35,7 @@
 </head>
 
 <body>
-   @* @await Component.InvokeAsync("Header")*@
+    @* @await Component.InvokeAsync("Header")*@
     <header class="header">
         <a href="" class="logo"><span class="dot">Sweet</span> Bites</a>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
@@ -59,32 +60,44 @@
             <li class="nav-item">
                 <a asp-controller="Contact" asp-action="Index" class="nav-link">Contact</a>
             </li>
-      @* 
+            @*
             @if (User.Identity.IsAuthenticated)
             {
-                <li class=""><a class="px-1" href="">@Model.UserFullName</a></li>
-                <li><a asp-controller="Account" asp-action="Logout" class="register">LogOut</a></li>
+            <li class=""><a class="px-1" href="">@Model.UserFullName</a></li>
+            <li><a asp-controller="Account" asp-action="Logout" class="register">LogOut</a></li>
             }
             else
             {
-                <li><a asp-controller="Account" asp-action="Login" class="register">Login / Register</a></li>
+            <li><a asp-controller="Account" asp-action="Login" class="register">Login / Register</a></li>
             }*@
-            @if (!User.Identity.IsAuthenticated)
-            {
-                <li><a asp-controller="Account" asp-action="Login">Login</a></li>
-                <li><a asp-controller="Account" asp-action="Register">Register</a></li>
-            }
-            else
+
+
+
+
+            @if (User.Identity.IsAuthenticated)
             {
                 <form asp-controller="Account" asp-action="Logout" asp-route-userId="@userManager.Users.Where(u=>u.UserName==User.Identity.Name).FirstOrDefault().Id" method="post">
 
-                <li>
-                    <button style="border:none; color: #b97a56; background: transparent; " type="submit">Logout</button>
+                <li class="logout_li">
+                    <button class="logout">
+                        <a>Logout</a>
+                    </button>
                 </li>
                 </form>
 
                 <li> <a href="#">@User.Identity.Name</a></li>
+
+
             }
+            else
+            {
+                <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+            }
+
+
+
+
 
         </ul>
 
@@ -110,7 +123,7 @@
         </div>
 
     </header>
-            @RenderBody()
+    @RenderBody()
     @await Component.InvokeAsync("Footer")
 
 

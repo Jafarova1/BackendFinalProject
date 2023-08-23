@@ -36,7 +36,7 @@ namespace FinalProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> PostComment(ContactVM model)
         {
             if (!ModelState.IsValid) return RedirectToAction("Index", model);

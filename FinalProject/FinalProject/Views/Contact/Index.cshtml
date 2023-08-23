@@ -53,14 +53,16 @@
                 </div>
                 <div class="col-md-6 contactform ">
                     <span class="subheading">Contact Us</span>
-                    @if (User.Identity.IsAuthenticated)
-                    {
+                 @*   @if (User.Identity.IsAuthenticated)
+                    {*@
                         <form  method="post" class="form" asp-action="PostComment">
                         <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" asp-for="Name" value="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).FirstName" required>
+                            <input type="text" id="name" name="name" asp-for="Name" required>
+                        @*value="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).FirstName"*@
 
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" asp-for="Email" value="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).Email" required>
+                        <input type="email" id="email" name="email" asp-for="Email"  required>
+                        @*value="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).Email"*@
 
                         <label for="email">Subject:</label>
                         <input type="text" id="subject" name="subject" >
@@ -71,10 +73,10 @@
 
                         <button type="submit">Submit Reservation</button>
                     </form>
-                    }
+                  @*  }
                     else
-                    {
-                        <form class="elementor-form" method="post" asp-controller="Account" asp-action="Login">
+                    {*@
+@*                        <form class="elementor-form" method="post" asp-controller="Account" asp-action="Login">
                             <div class="input-area">
                                 <input type="text" placeholder="Your FirstName *">
                            
@@ -87,8 +89,8 @@
                             </div>
                             <textarea placeholder="Your Message"></textarea>
                             <button type="submit">Submit Reservation</button>
-                        </form>
-                    }
+                        </form>*@
+                    @*}*@
        
                    
                 </div>

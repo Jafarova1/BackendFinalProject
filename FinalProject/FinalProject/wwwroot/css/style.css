@@ -11,6 +11,7 @@ li {
 
 a {
     color: white;
+    transition: .3s;
     text-decoration: none;
 }
 
@@ -116,7 +117,8 @@ a {
 
     .nav-item {
 
-        margin: 16px 0;
+        /*margin: 16px 0;*/
+        margin:-14px 0
        
     }
 
@@ -824,8 +826,7 @@ footer .social {
 
 
 form {
-    display: grid;
-    grid-gap: 10px;
+    display: inline;
 }
 
 label {
@@ -931,17 +932,33 @@ form button:hover {
     overflow: hidden;
    
   }
-  
-  .header li a {
+
+
+  .nav-item{
+      transition: .3s;
+  }
+
+.logout {
+    border: none;
+    background: inherit;
+}
+
+.logout:hover{
+    background: white;
+}
+
+.logout_li button a:hover{
+    background: none !important;
+}
+
+.header li a {
     display: block;
-/*    margin-top: -25px;*/
+    /*    margin-top: -25px;*/
     text-align: center;
     border-right: 1px solid #f4f4f4;
     text-decoration: none;
-    margin-top:5px
-
-
-  }
+    margin-top: 5px
+}
   
   .header li a:hover,
   .header .menu-btn:hover {

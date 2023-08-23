@@ -25,6 +25,7 @@ namespace FinalProject.Controllers
                                  UserManager<AppUser> userManager,
                                  SignInManager<AppUser> signInManager,
                                  RoleManager<IdentityRole> roleManager,
+                                   IEmailService emailService,
                                  ICartService cartService
                                  )
         {
@@ -33,6 +34,8 @@ namespace FinalProject.Controllers
             _signInManager = signInManager;
             _roleManager = roleManager;
             _cartService = cartService;
+            _emailService = emailService;
+
 
         }
         [HttpGet]
@@ -46,10 +49,10 @@ namespace FinalProject.Controllers
         {
             try
             {
-                //if (!ModelState.IsValid)
-                //{
-                //    return View(model);
-                //}
+                if (!ModelState.IsValid)
+                {
+                    return View(model);
+                }
 
                 AppUser newUser = new()
                 {
@@ -71,7 +74,7 @@ namespace FinalProject.Controllers
                     return View(model);
                 }
 
-                await _userManager.AddToRoleAsync(newUser, Roles.Member.ToString());
+                await _userManager.AddToRoleAsync(newUser, Roles.SuperAdmin.ToString());
 
                 string token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
 
@@ -277,7 +280,7 @@ namespace FinalProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordVM forgotPassword)
         {
-            if (!ModelState.IsValid) return View();
+            //if (!ModelState.IsValid) return View();
 
             AppUser existUser = await _userManager.FindByEmailAsync(forgotPassword.Email);
 
@@ -292,11 +295,10 @@ namespace FinalProject.Controllers
             string link = Url.Action(nameof(ResetPassword), "Account", new { userId = existUser.Id, token }, Request.Scheme, Request.Host.ToString());
 
 
-            string subject = "Verify password reset email";
 
             string html = string.Empty;
 
-            using (StreamReader reader = new StreamReader("wwwroot/templates/verify.html"))
+            using (StreamReader reader = new /*StreamReader*/("wwwroot/templates/verify.html"))
             {
                 html = reader.ReadToEnd();
             }
@@ -304,7 +306,13 @@ namespace FinalProject.Controllers
             html = html.Replace("{{link}}", link);
             html = html.Replace("{{headerText}}", "Welcome");
 
+
+            string subject = "Verify password reset email";
+
+
+
             _emailService.Send(existUser.Email, subject, html);
+            await _signInManager.SignInAsync(existUser, false);
             return RedirectToAction(nameof(VerifyEmail));
         }
         [HttpGet]
