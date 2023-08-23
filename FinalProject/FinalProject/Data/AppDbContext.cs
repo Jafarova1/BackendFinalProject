@@ -41,6 +41,7 @@ namespace FinalProject.Data
         public DbSet<Cart> Carts { get; set; }
         public DbSet<FoodCart> FoodCarts { get; set; }
         public DbSet<AccountPageImage> AccountPageImages { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

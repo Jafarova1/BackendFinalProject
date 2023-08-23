@@ -14,7 +14,7 @@
             @foreach (var productImage in Model.Images)
             {
                 <div style="width:200px; margin-right:10px;" data-id="@productImage.Id">
-                    <img style="width:200px;height:200px" class="img-fluid" src="~/assets/images/@productImage.Image" />
+                    <img style="width:200px;height:200px" class="img-fluid" src="~/images/@productImage.Image" />
                     <div class=" d-flex align-items-center justify-content-center" style="margin-top: 13px;" data-id="@productImage.Id">
                         <a class="delete-image"><i class="fa-solid fa-trash" style="color: #c60101; cursor:pointer;"></i></a>
                         <div class="statuses" style=" margin-left:10px;">

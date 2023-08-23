@@ -155,20 +155,22 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="AboutSlider" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">AboutSlider</div>
+                                <a asp-area="Admin" asp-controller="Author" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">Author</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="AboutUs" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">AboutUs</div>
+                                <a asp-area="Admin" asp-controller="Subscribe" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">Subscribe</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="AdditionalFood" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">AdditionalFood</div>
+                                <a asp-area="Admin" asp-controller="RecentBlog" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">RecentBlog</div>
                                 </a>
                             </li>
+                    
+                     
                             <li class="menu-item">
                                 <a asp-area="Admin" asp-controller="Advertisment" asp-action="Index" class="menu-link">
                                     <div data-i18n="Error">Advertisment</div>
@@ -184,20 +186,18 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="Author" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">Author</div>
+                                <a asp-area="Admin" asp-controller="AboutSlider" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">AboutSlider</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="Blog" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">Blog</div>
+                                <a asp-area="Admin" asp-controller="AboutUs" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">AboutUs</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="Category" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">Category</div>
-                                </a>
-                            </li>
+                   
+                    
+                 
                       
                         </ul>
                     </li>
@@ -208,26 +208,39 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="DesserMenu" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">DesserMenu</div>
+                                <a asp-area="Admin" asp-controller="Blog" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">Blog</div>
                                 </a>
                             </li>
+                      
+                       
+                     
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-table"></i>
+                            <div data-i18n="Tables">FoodRecipes</div>
+                        </a>
+                        <ul class="menu-sub">
                             <li class="menu-item">
                                 <a asp-area="Admin" asp-controller="FoodComment" asp-action="Index" class="menu-link">
                                     <div data-i18n="Error">FoodComment</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="StarterMenu" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">StarterMenu</div>
+                                <a asp-area="Admin" asp-controller="Category" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">Category</div>
                                 </a>
                             </li>
+
+
                         </ul>
                     </li>
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-table"></i>
-                            <div data-i18n="Tables">Shop</div>
+                            <div data-i18n="Tables">Post</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
@@ -235,41 +248,54 @@
                                     <div data-i18n="Error">MiniPost</div>
                                 </a>
                             </li>
+                     
+                       
+@*
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="Order" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">Order</div>
+                                <a asp-area="Admin" asp-controller="User" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">User</div>
+                                </a>
+                            </li>*@
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-table"></i>
+                            <div data-i18n="Tables">Menu</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a asp-area="Admin" asp-controller="DesserMenu" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">DesserMenu</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="RecentBlog" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">RecentBlog</div>
+                                <a asp-area="Admin" asp-controller="StarterMenu" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">StarterMenu</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="Social" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">Social</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="Setting" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">Setting</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="Subscribe" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">Subscribe</div>
-                                </a>
-                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-table"></i>
+                            <div data-i18n="Tables">Stories</div>
+                        </a>
+                        <ul class="menu-sub">
                             <li class="menu-item">
                                 <a asp-area="Admin" asp-controller="Stories" asp-action="Index" class="menu-link">
                                     <div data-i18n="Error">Stories</div>
                                 </a>
                             </li>
+
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="User" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">User</div>
+                                <a asp-area="Admin" asp-controller="AdditionalFood" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">AdditionalFood</div>
                                 </a>
                             </li>
+                      
+
                         </ul>
                     </li>
                     <li class="menu-item">
@@ -284,6 +310,11 @@
                                 </a>
                             </li>
                             <li class="menu-item">
+                                <a asp-area="Admin" asp-controller="Order" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">Order</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
                         </ul>
                     </li>
                     <li class="menu-item">
@@ -292,14 +323,9 @@
                             <div data-i18n="Tables">Layout</div>
                         </a>
                         <ul class="menu-sub">
-           @*                 <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="SectionBackgroundImage" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">SectionBackgroundImage</div>
-                                </a>
-                            </li>
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="Headerbackground" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">Headerbackground</div>
+                                <a asp-area="Admin" asp-controller="Setting" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Error">Setting</div>
                                 </a>
                             </li>
                             <li class="menu-item">
@@ -308,12 +334,9 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a asp-area="Admin" asp-controller="Advertising" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Error">Advertising</div>
-                                </a>
-                            </li>*@
                         </ul>
                     </li>
+             
 
                 </ul>
             </aside>

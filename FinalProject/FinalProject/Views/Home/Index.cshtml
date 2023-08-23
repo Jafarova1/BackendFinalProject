@@ -336,7 +336,7 @@
                         </form>*@
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <form method="post" asp-controller="About" asp-action="PostSubscribe">
+                        <form method="post" asp-controller="Home" asp-action="PostSubscribe">
                             <div class="subscribe" id="">
                                 <span class="email-input">
                                     <input asp-for="Email" required type="text" placeholder="E-MAIL" placeholder="YOUR E-MAIL ADDRESS...">

@@ -834,6 +834,43 @@ namespace FinalProject.Migrations
                     b.ToTable("Recipes");
                 });
 
+            modelBuilder.Entity("FinalProject.Models.Reservation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Comments")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reservations");
+                });
+
             modelBuilder.Entity("FinalProject.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
@@ -923,9 +960,6 @@ namespace FinalProject.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("DessertId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -943,8 +977,6 @@ namespace FinalProject.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DessertId");
 
                     b.HasIndex("StarterId");
 
@@ -1148,7 +1180,7 @@ namespace FinalProject.Migrations
             modelBuilder.Entity("FinalProject.Models.DessertMenuImage", b =>
                 {
                     b.HasOne("FinalProject.Models.Dessert", "Dessert")
-                        .WithMany()
+                        .WithMany("Images")
                         .HasForeignKey("DessertId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1225,10 +1257,6 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("FinalProject.Models.StarterMenuImage", b =>
                 {
-                    b.HasOne("FinalProject.Models.Dessert", null)
-                        .WithMany("Images")
-                        .HasForeignKey("DessertId");
-
                     b.HasOne("FinalProject.Models.Starter", "Starter")
                         .WithMany("Images")
                         .HasForeignKey("StarterId")

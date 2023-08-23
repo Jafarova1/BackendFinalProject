@@ -7,13 +7,15 @@ namespace FinalProject.Areas.Admin.Controllers
     [Authorize(Roles = "SuperAdmin, Admin")]
     public class DashboardController : Controller
     {
-        public IActionResult Index(string viewName, string controllerName)
+        public IActionResult Index(/*string viewName, string controllerName*/)
         {
-            if (viewName == "Index" && controllerName == "Dashboard")
-            {
-                return View();
-            }
-            return RedirectToAction("AdminLogin", "Account");
+            //if (viewName == "Index" && controllerName == "Dashboard")
+            //{
+            //    return View();
+            //}
+            //return RedirectToAction("Admin", "Account");
+            return View();
+
         }
     }
 }
