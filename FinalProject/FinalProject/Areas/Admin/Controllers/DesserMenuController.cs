@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FinalProject.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class DesserMenuController : Controller
     {
         private readonly IStarterMenuService _starterMenuService;

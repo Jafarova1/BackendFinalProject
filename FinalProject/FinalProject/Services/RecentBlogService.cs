@@ -15,8 +15,6 @@ namespace FinalProject.Services
         }
         public async Task<List<RecentBlog>> GetAll() => await _context.RecentBlogs.ToListAsync();
 
-        public async Task<RecentBlog> GetById(int? id) => await _context.RecentBlogs.Include(m => m.Image)
-                                                                         .Include(m => m.Description)
-                                                                         .FirstOrDefaultAsync(m => m.Id == id);
+        public async Task<RecentBlog> GetById(int? id) => await _context.RecentBlogs.FirstOrDefaultAsync(m => m.Id == id);
     }
 }

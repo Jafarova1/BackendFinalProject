@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FinalProject.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class StarterMenuController : Controller
     {
         private readonly IStarterMenuService _starterMenuService;

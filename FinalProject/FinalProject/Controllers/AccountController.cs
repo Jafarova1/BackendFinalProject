@@ -90,7 +90,7 @@ namespace FinalProject.Controllers
                 }
 
                 html = html.Replace("{{link}}", link);
-                html = html.Replace("{{headerText}}", "Welcome");
+                html = html.Replace("{{headerText}}", "Welcome to SweetBites");
 
                 _emailService.Send(newUser.Email, subject, html);
 
@@ -138,9 +138,14 @@ namespace FinalProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult VerifyEmail()
+        public IActionResult VerifyEmail(string email)
         {
-            return View();
+            ConfirmAccountVM confirmAccount = new ConfirmAccountVM()
+            {
+                Email = email
+            };
+
+            return View(confirmAccount);
         }
         [HttpGet]
         public IActionResult Login()
@@ -299,13 +304,13 @@ namespace FinalProject.Controllers
 
             string html = string.Empty;
 
-            using (StreamReader reader = new /*StreamReader*/("wwwroot/templates/verify.html"))
+            using (StreamReader reader = new StreamReader("wwwroot/templates/verify.html"))
             {
                 html = reader.ReadToEnd();
             }
 
             html = html.Replace("{{link}}", link);
-            html = html.Replace("{{headerText}}", "Welcome");
+            html = html.Replace("{{headerText}}", "Welcome to SweetBites");
 
 
             string subject = "Verify password reset email";

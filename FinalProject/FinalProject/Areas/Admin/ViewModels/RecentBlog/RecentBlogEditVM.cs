@@ -8,6 +8,6 @@ namespace FinalProject.Areas.Admin.ViewModels.RecentBlog
         [Required(ErrorMessage = "Don't be empty")]
         public string Description { get; set; }
         [Required(ErrorMessage = "Don't be empty")]
-        public string Image { get; set; }
+        public string Image { get; set; } 
     }
 }

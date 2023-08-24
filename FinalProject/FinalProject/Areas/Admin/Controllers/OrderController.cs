@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace FinalProject.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class OrderController : Controller
     {
         private readonly AppDbContext _context;
