@@ -24,12 +24,45 @@
         <li class="nav-item">
             <a asp-controller="Contact" asp-action="Index" class="nav-link">Contact</a>
         </li>
-        <li class="nav-item">
-            <a asp-controller="Account" asp-action="Login" class="nav-link">Login</a>
-        </li>
-        <li class="nav-item">
-            <a asp-controller="Account" asp-action="Register" class="nav-link">Register</a>
-        </li>
+        @*
+        @if (User.Identity.IsAuthenticated)
+        {
+        <li class=""><a class="px-1" href="">@Model.UserFullName</a></li>
+        <li><a asp-controller="Account" asp-action="Logout" class="register">LogOut</a></li>
+        }
+        else
+        {
+        <li><a asp-controller="Account" asp-action="Login" class="register">Login / Register</a></li>
+        }*@
+
+
+
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <form asp-controller="Account" asp-action="Logout" asp-route-userId="@userManager.Users.Where(u=>u.UserName==User.Identity.Name).FirstOrDefault().Id" method="post">
+
+            <li class="logout_li">
+                <button class="logout">
+                    <a>Logout</a>
+                </button>
+            </li>
+            </form>
+
+            <li> <a href="#">@User.Identity.Name</a></li>
+
+
+        }
+        else
+        {
+            <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+            <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+        }
+
+
+
+
+
     </ul>
 
     <div class="cart-modal-overlay">
@@ -51,6 +84,7 @@
     <div class="cart-btn">
         <i id="cart" class="fas fa-shopping-cart"></i>
         <span class="cart-quantity">0</span>
+        <span style="display:none" class="cart-quantity2">@Model.Count</span>
     </div>
 
 </header>

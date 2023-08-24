@@ -1165,7 +1165,7 @@ form button:hover {
         margin-bottom: 1em
     }
 
-    .add-to-cart {
+/*    .add-to-cart {
         background-color: palevioletred;
         color: white;
         position: absolute;
@@ -1179,7 +1179,7 @@ form button:hover {
         cursor: pointer;
         font-weight: bolder;
         font-size: 1.2rem
-    }
+    }*/
 
     .product-price {
         padding-top: 1em;

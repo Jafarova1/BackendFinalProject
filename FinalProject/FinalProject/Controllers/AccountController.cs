@@ -103,6 +103,7 @@ namespace FinalProject.Controllers
             }
         }
 
+        [HttpPost]
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
             if (userId == null || token == null) return BadRequest();

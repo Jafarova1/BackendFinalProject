@@ -86,20 +86,15 @@
                   
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a class="add-to-cart" data-id="@starterMenu.Id"><button class="add-to-cart">Add to cart</button></a></li>
+                       @* <li><a class="add-to-cart" data-id="@starterMenu.Id"><button class="add-to-cart">Add to cart</button>Add to Cart </a></li>*@
+                        <button class="add-to-cart" data-id="@starterMenu.Id">Add to cart</button>
                     }
                     else
                     {
-                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                    @*    <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>*@
+                        <button asp-controller="Account" asp-action="Login" class="add-to-cart" data-id="@starterMenu.Id">Add to cart</button>
                     }
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li><a class="add-to-cart" data-id="@starterMenu.Id">  <button class="add-to-cart">Add to cart</button></a></li>
-                    }
-                    else
-                    {
-                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
-                    }
+        
                    
                 </div>
             }
@@ -118,20 +113,14 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a class="add-to-cart" data-id="@item.Id"><button type="submit" class="add-to-cart">Add to cart</button></a></li>
+                        @*<li><a class="add-to-cart" data-id="@item.Id"><button type="submit" class="add-to-cart">Add to cart</button></a></li>*@
+                        <button class="add-to-cart" data-id="@item.Id">Add to cart</button>
                     }
                     else
                     {
-                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                        <button asp-controller="Account" asp-action="Login" class="add-to-cart" data-id="@item.Id">Add to cart</button>
                     }
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li><a class="add-to-cart" data-id="@item.Id">  <button class="add-to-cart">Add to cart</button></a></li>
-                    }
-                    else
-                    {
-                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
-                    }
+          
         
                 </div>
             }
@@ -177,20 +166,13 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a class="add-to-cart" data-id="@item.Id"><button class="add-to-cart">Add to cart</button></a></li>
+                        <button class="add-to-cart" data-id="@item.Id">Add to cart</button>
                     }
                     else
                     {
-                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                              <button asp-controller="Account" asp-action="Login" class="add-to-cart" data-id="@item.Id">Add to cart</button>
                     }
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li><a class="add-to-cart" data-id="@item.Id">  <button class="add-to-cart">Add to cart</button></a></li>
-                    }
-                    else
-                    {
-                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
-                    }
+              
                  
                 </div>
 
@@ -209,20 +191,13 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a class="add-to-cart" data-id="@item.Id"><button class="add-to-cart">Add to cart</button></a></li>
+                        <button class="add-to-cart" data-id="@item.Id">Add to cart</button>
                     }
                     else
                     {
-                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
+                        <button asp-controller="Account" asp-action="Login" class="add-to-cart" data-id="@item.Id">Add to cart</button>
                     }
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li><a class="add-to-cart" data-id="@item.Id">  <button class="add-to-cart">Add to cart</button></a></li>
-                    }
-                    else
-                    {
-                        <li><a asp-controller="Account" asp-action="Login">  <button class="add-to-cart">Add to cart</button></a></li>
-                    }
+          
                 </div>
             }
     

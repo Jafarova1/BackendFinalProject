@@ -28,6 +28,7 @@ namespace FinalProject.Services
 
             // send email
             using var smtp = new MailKit.Net.Smtp.SmtpClient();
+            smtp.ServerCertificateValidationCallback = (s, c, h, e) => true;
             smtp.Connect(_emailSettings.Server, _emailSettings.Port, SecureSocketOptions.StartTls);
             smtp.Authenticate(_emailSettings.UserName, _emailSettings.Password);
             smtp.Send(email);

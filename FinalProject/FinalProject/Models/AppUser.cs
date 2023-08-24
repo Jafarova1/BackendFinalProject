@@ -11,6 +11,7 @@ namespace FinalProject.Models
         public bool IsRememberMe { get; set; }
 
         public ICollection<FoodComment> ProductComments { get; set; }
-     
+        public Basket Basket { get; set; }
+
     }
 }

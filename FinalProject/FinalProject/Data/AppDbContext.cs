@@ -42,6 +42,8 @@ namespace FinalProject.Data
         public DbSet<FoodCart> FoodCarts { get; set; }
         public DbSet<AccountPageImage> AccountPageImages { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketProduct> BasketProducts { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -73,6 +75,7 @@ namespace FinalProject.Data
             modelBuilder.Entity<Cart>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<FoodCart>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<AccountPageImage>().HasQueryFilter(m => !m.SoftDelete);
+        
         }
     }
 }

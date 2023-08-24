@@ -6,5 +6,8 @@
         public bool IsMain { get; set; }
         public int StarterMenuId { get; set; }
         public Starter Starter { get; set; }
+
+
+     
     }
 }
