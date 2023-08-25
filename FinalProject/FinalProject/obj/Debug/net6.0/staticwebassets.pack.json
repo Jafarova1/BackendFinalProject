@@ -2121,6 +2121,14 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\0c6ebf67-3158-4ecc-8f1f-d2ecf1b47afb blog-9.jpg",
+      "PackagePath": "staticwebassets\\images\\0c6ebf67-3158-4ecc-8f1f-d2ecf1b47afb blog-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\97e3df5b-ba42-4285-bd27-827da7f45c8a bg_2.jpg",
+      "PackagePath": "staticwebassets\\images\\97e3df5b-ba42-4285-bd27-827da7f45c8a bg_2.jpg"
+    },
+    {
       "Id": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\bg_1.jpg",
       "PackagePath": "staticwebassets\\images\\bg_1.jpg"
     },

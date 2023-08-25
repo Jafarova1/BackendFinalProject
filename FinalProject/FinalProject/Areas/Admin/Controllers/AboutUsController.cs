@@ -87,10 +87,10 @@ namespace FinalProject.Areas.Admin.Controllers
                 }
 
                 string fileNameSmallPhoto = Guid.NewGuid().ToString() + " " + aboutUs.SmallPhoto.FileName;
-                string newPathSmallPhoto = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileNameSmallPhoto);
+                string newPathSmallPhoto = FileHelper.GetFilePath(_env.WebRootPath, "images", fileNameSmallPhoto);
                 await FileHelper.SaveFileAsync(newPathSmallPhoto, aboutUs.SmallPhoto);
                 string fileNameLargePhoto = Guid.NewGuid().ToString() + " " + aboutUs.LargePhoto.FileName;
-                string newPathLargePhoto = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileNameLargePhoto);
+                string newPathLargePhoto = FileHelper.GetFilePath(_env.WebRootPath, "images", fileNameLargePhoto);
                 await FileHelper.SaveFileAsync(newPathLargePhoto, aboutUs.LargePhoto);
 
                 AboutUs newAboutUs = new()
@@ -125,8 +125,8 @@ namespace FinalProject.Areas.Admin.Controllers
                 AboutUs aboutUs = await _aboutUsService.GetAboutUsById(id);
                 if (aboutUs == null) return NotFound();
 
-                string pathSmallImg = FileHelper.GetFilePath(_env.WebRootPath, "/images", aboutUs.FirstImage);
-                string pathLargeImg = FileHelper.GetFilePath(_env.WebRootPath, "/images", aboutUs.SecondtImage);
+                string pathSmallImg = FileHelper.GetFilePath(_env.WebRootPath, "images", aboutUs.FirstImage);
+                string pathLargeImg = FileHelper.GetFilePath(_env.WebRootPath, "images", aboutUs.SecondtImage);
 
 
                 FileHelper.DeleteFile(pathSmallImg);
@@ -207,10 +207,10 @@ namespace FinalProject.Areas.Admin.Controllers
 
                     }
 
-                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "/images", dbaboutUs.FirstImage);
+                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "images", dbaboutUs.FirstImage);
                     FileHelper.DeleteFile(deletePath);
                     string fileName = Guid.NewGuid().ToString() + " " + aboutUs.SmallPhoto.FileName;
-                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                     await FileHelper.SaveFileAsync(newPath, aboutUs.SmallPhoto);
                     dbaboutUs.FirstImage = fileName;
                 }
@@ -237,10 +237,10 @@ namespace FinalProject.Areas.Admin.Controllers
 
                     }
 
-                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "/images", dbaboutUs.SecondtImage);
+                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "images", dbaboutUs.SecondtImage);
                     FileHelper.DeleteFile(deletePath);
                     string fileName = Guid.NewGuid().ToString() + " " + aboutUs.LargePhoto.FileName;
-                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                     await FileHelper.SaveFileAsync(newPath, aboutUs.LargePhoto);
                     dbaboutUs.SecondtImage = fileName;
                 }

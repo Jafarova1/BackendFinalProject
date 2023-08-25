@@ -80,7 +80,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 }
 
                 string fileName = Guid.NewGuid().ToString() + " " + addFood.Photo.FileName;
-                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                 await FileHelper.SaveFileAsync(newPath, addFood.Photo);
 
                 AdditionalFood newAddFood = new()
@@ -111,7 +111,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 if (id == null) return BadRequest();
                 AdditionalFood additionalFood = await _additionalFoodService.GetById(id);
                 if (additionalFood == null) return NotFound();
-                string path = FileHelper.GetFilePath(_env.WebRootPath, "/images", additionalFood.Image);
+                string path = FileHelper.GetFilePath(_env.WebRootPath, "images", additionalFood.Image);
                 FileHelper.DeleteFile(path);
                 _context.AdditionalFoods.Remove(additionalFood);
                 await _context.SaveChangesAsync();
@@ -181,10 +181,10 @@ namespace FinalProject.Areas.Admin.Controllers
                         return View(model);
                     }
 
-                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "/images", dbAdditionalFood.Image);
+                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "images", dbAdditionalFood.Image);
                     FileHelper.DeleteFile(deletePath);
                     string fileName = Guid.NewGuid().ToString() + " " + addFood.Photo.FileName;
-                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                     await FileHelper.SaveFileAsync(newPath, addFood.Photo);
                     dbAdditionalFood.Image = fileName;
                 }

@@ -12,9 +12,9 @@ namespace FinalProject.Controllers
     public class PostController:Controller
     {
         private readonly AppDbContext _context;
-        private readonly ILayoutService _layoutService;
+        private readonly LayoutService _layoutService;
         private readonly IMiniPostService _miniPostService;
-        public PostController(AppDbContext context,ILayoutService layoutService,IMiniPostService miniPostService)
+        public PostController(AppDbContext context,LayoutService layoutService,IMiniPostService miniPostService)
         {
                 _context = context;
             _layoutService = layoutService; 

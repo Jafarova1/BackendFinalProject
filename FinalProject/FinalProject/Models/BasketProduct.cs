@@ -8,7 +8,7 @@
         public Basket Basket { get; set; }
         public int StarterId { get; set; }
         public Starter Starter { get; set; }
-        public Dessert Dessert { get; set; }
         public int DessertId { get; set; }
+        public Dessert Dessert { get; set; }
     }
 }

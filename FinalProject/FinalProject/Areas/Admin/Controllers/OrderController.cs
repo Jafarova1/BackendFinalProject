@@ -80,7 +80,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 }
 
                 string fileName = Guid.NewGuid().ToString() + " " + order.Photo.FileName;
-                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                 await FileHelper.SaveFileAsync(newPath, order.Photo);
 
                 Order newOrder = new()
@@ -111,7 +111,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 if (id == null) return BadRequest();
                 Order order = await _orderService.GetOrderById(id);
                 if (order == null) return NotFound();
-                string path = FileHelper.GetFilePath(_env.WebRootPath, "/images", order.Image);
+                string path = FileHelper.GetFilePath(_env.WebRootPath, "images", order.Image);
                 FileHelper.DeleteFile(path);
                 _context.Orders.Remove(order);
                 await _context.SaveChangesAsync();
@@ -181,10 +181,10 @@ namespace FinalProject.Areas.Admin.Controllers
                         return View(model);
                     }
 
-                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "/images", dbOrder.Image);
+                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "images", dbOrder.Image);
                     FileHelper.DeleteFile(deletePath);
                     string fileName = Guid.NewGuid().ToString() + " " + order.Photo.FileName;
-                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                     await FileHelper.SaveFileAsync(newPath, order.Photo);
                     dbOrder.Image = fileName;
                 }

@@ -15,5 +15,6 @@ namespace FinalProject.ViewModels
         public string Email { get; set; }
         public string Message { get; set; }
         public List<ContactBox> ContactBoxes { get; set; }
+        public Contact Contact { get; set; }
     }
 }

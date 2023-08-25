@@ -4,6 +4,7 @@ using FinalProject.Data;
 using FinalProject.Helpers;
 using FinalProject.Models;
 using FinalProject.Services;
+using FinalProject.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject.Areas.Admin.Controllers
@@ -13,11 +14,11 @@ namespace FinalProject.Areas.Admin.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
-        private readonly AboutSliderService _aboutSliderService;
+        private readonly IAboutSliderService _aboutSliderService;
 
         public AboutSliderController(AppDbContext context,
                                 IWebHostEnvironment env,
-                                AboutSliderService aboutSliderService)
+                                IAboutSliderService aboutSliderService)
         {
             _context = context;
             _env = env;
@@ -77,7 +78,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 }
 
                 string fileName = Guid.NewGuid().ToString() + " " + slider.Photo.FileName;
-                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                 await FileHelper.SaveFileAsync(newPath, slider.Photo);
 
                 AboutSlider newSlider = new()
@@ -108,7 +109,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 if (id == null) return BadRequest();
                 AboutSlider slider = await _aboutSliderService.GetAboutSliderById(id);
                 if (slider == null) return NotFound();
-                string path = FileHelper.GetFilePath(_env.WebRootPath, "assets/images", slider.Image);
+                string path = FileHelper.GetFilePath(_env.WebRootPath, "images", slider.Image);
                 FileHelper.DeleteFile(path);
                 _context.AboutSliders.Remove(slider);
                 await _context.SaveChangesAsync();
@@ -177,10 +178,10 @@ namespace FinalProject.Areas.Admin.Controllers
                         return View(model);
                     }
 
-                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "assets/images", dbSlider.Image);
+                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "images", dbSlider.Image);
                     FileHelper.DeleteFile(deletePath);
                     string fileName = Guid.NewGuid().ToString() + " " + slider.Photo.FileName;
-                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "assets/images", fileName);
+                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                     await FileHelper.SaveFileAsync(newPath, slider.Photo);
                     dbSlider.Image = fileName;
                 }

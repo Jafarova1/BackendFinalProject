@@ -54,44 +54,21 @@
                 <div class="col-md-6 contactform ">
                     <span class="subheading">Contact Us</span>
 
-                    @*   @if (User.Identity.IsAuthenticated)
-                    {*@
-                    <form asp-controller="Contact" method="post" class="form" asp-action="Index">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" asp-for="Name" required>
-                        @*value="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).FirstName"*@
+                    <form asp-controller="Contact" asp-action="Index" method="post">
+                        <input asp-for="Name" type="text" class="field" placeholder="Your Fullname" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
 
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" asp-for="Email" required>
-                        @*value="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).Email"*@
+                        <input asp-for="Email" class="field" placeholder="Your Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
 
-                        <label for="email">Subject:</label>
-                        <input type="text" id="subject" name="subject">
+                        <input asp-for="Phone" class="field" placeholder="Phone" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
 
+                        <textarea style="resize: none;" asp-for="Message" placeholder="Message" class="field"></textarea>
+                        <span asp-validation-for="Message" class="text-danger"></span>
 
-                        <label for="comments">Comments:</label>
-                        <textarea asp-for="Message" id="comments" name="comments" rows="4"></textarea>
-
-                        <button type="submit">Submit Reservation</button>
+                        <button type="submit" class="btn">Send</button>
                     </form>
-                    @*  }
-                    else
-                    {*@
-                    @*                        <form class="elementor-form" method="post" asp-controller="Account" asp-action="Login">
-                    <div class="input-area">
-                    <input type="text" placeholder="Your FirstName *">
-
-                    </div>
-                    <div class="input-area">
-                    <input type="number" placeholder="Phone Number">
-                    </div>
-                    <div class="input-area">
-                    <input type="text" placeholder="Your Email">
-                    </div>
-                    <textarea placeholder="Your Message"></textarea>
-                    <button type="submit">Submit Reservation</button>
-                    </form>*@
-                    @*}*@
                    
                 </div>
             </div>
@@ -135,7 +112,7 @@
             </p>
             <div class="row d-flex justify-content-center mt-4 mb-4">
                 <div class="col-md-8">
-                    @if (User.Identity.IsAuthenticated)
+                   @if (User.Identity.IsAuthenticated)
                     {
                         <form method="post" asp-controller="About" asp-action="PostSubscribe">
                             <div class="subscribe" id="">

@@ -17,11 +17,12 @@ namespace FinalProject.Areas.Admin.Controllers
         private readonly IStoryService _storyService;
         private readonly IAuthorService _authorService;
 
-        public StoriesController(AppDbContext context, IWebHostEnvironment env, IBlogService blogService, IAuthorService authorService)
+        public StoriesController(AppDbContext context, IWebHostEnvironment env, IBlogService blogService, IAuthorService authorService,IStoryService storyService)
         {
             _context = context;
             _env = env;
             _authorService = authorService;
+            _storyService = storyService;
         }
         public async Task<IActionResult> Index()
         {
@@ -78,7 +79,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 }
 
                 string fileName = Guid.NewGuid().ToString() + " " + story.Photo.FileName;
-                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                 await FileHelper.SaveFileAsync(newPath, story.Photo);
 
                 Story newStory = new()
@@ -108,7 +109,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 if (id == null) return BadRequest();
                 Story story = await _storyService.GetById(id);
                 if (story == null) return NotFound();
-                string path = FileHelper.GetFilePath(_env.WebRootPath, "/images", story.Image);
+                string path = FileHelper.GetFilePath(_env.WebRootPath, "images", story.Image);
                 FileHelper.DeleteFile(path);
                 _context.Stories.Remove(story);
                 await _context.SaveChangesAsync();
@@ -177,10 +178,10 @@ namespace FinalProject.Areas.Admin.Controllers
                         return View(model);
                     }
 
-                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "/images", dbStory.Image);
+                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "images", dbStory.Image);
                     FileHelper.DeleteFile(deletePath);
                     string fileName = Guid.NewGuid().ToString() + " " + story.Photo.FileName;
-                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                     await FileHelper.SaveFileAsync(newPath, story.Photo);
                     dbStory.Image = fileName;
                 }

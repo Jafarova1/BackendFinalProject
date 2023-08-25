@@ -103,7 +103,6 @@ namespace FinalProject.Controllers
             }
         }
 
-        [HttpPost]
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
             if (userId == null || token == null) return BadRequest();
@@ -115,26 +114,7 @@ namespace FinalProject.Controllers
             await _userManager.ConfirmEmailAsync(user, token);
 
             await _signInManager.SignInAsync(user, false);
-            List<CartVM> cartVMs = new();
-            Cart dbCart = await _cartService.GetByUserIdAsync(userId);
-            if (dbCart is not null)
-            {
-                List<FoodCart> foodsCart = await _cartService.GetAllByCartIdAsync(dbCart.Id);
-                foreach (var foodCart in foodsCart)
-                {
-                    cartVMs.Add(new CartVM
-                    {
-                        StarterMenuId = foodCart.Id,
-                        DessertMenuId = foodCart.Id,
-                        Count = foodCart.Count,
 
-                    });
-
-                }
-                Response.Cookies.Append("basket", JsonConvert.SerializeObject(cartVMs));
-
-            }
-            Response.Cookies.Append("basket", JsonConvert.SerializeObject(cartVMs));
             return RedirectToAction("Index", "Home");
         }
 

@@ -602,3 +602,12 @@ color:white;
     display: none
 }
 */
+
+.field:nth-child(1) {
+    position: relative;
+    right: 49px;
+}
+
+.btn {
+    background-color: #ff6e7f;
+}

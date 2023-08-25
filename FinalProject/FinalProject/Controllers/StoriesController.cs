@@ -12,10 +12,10 @@ namespace FinalProject.Controllers
     public class StoriesController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly ILayoutService _layoutService;
+        private readonly LayoutService _layoutService;
         private readonly IStoryService _storyService;
 
-        public StoriesController(AppDbContext context,ILayoutService layoutService,IStoryService storyService)
+        public StoriesController(AppDbContext context,LayoutService layoutService,IStoryService storyService)
         {
             _context = context;
             _layoutService = layoutService;

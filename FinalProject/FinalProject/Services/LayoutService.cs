@@ -8,7 +8,8 @@ using System.Security.Claims;
 
 namespace FinalProject.Services
 {
-    public class LayoutService : ILayoutService
+    public class LayoutService 
+
     {
         private readonly AppDbContext _context;
 
@@ -16,7 +17,12 @@ namespace FinalProject.Services
         {
             _context = context;
         }
-        public Dictionary<string, string> GetSettingDatas() => _context.Settings.AsEnumerable().ToDictionary(m => m.Key, m => m.Value);
+        public async  Task<Dictionary<string, string>> GetSettingDatas()
+        {
+            return await _context.Settings.ToDictionaryAsync(m => m.Key, m => m.Value);
+        }
         public async Task<List<Social>> GetAll() => await _context.Socials.ToListAsync();
+
+    
     }
 }

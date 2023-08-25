@@ -2,6 +2,7 @@
 using FinalProject.Models;
 using FinalProject.ViewModels;
 using FinalProject.ViewModels.Basket;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using Newtonsoft.Json;
 
 namespace FinalProject.Controllers
 {
+    [Authorize]
     public class BasketController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
@@ -43,12 +45,12 @@ namespace FinalProject.Controllers
                     Id = dbBasketProduct.Id,
                     StarterMenuId = dbBasketProduct.StarterId,
                     DessertMenuId = dbBasketProduct.DessertId,
-                    StarterImage = dbBasketProduct.Starter.Images.FirstOrDefault(m=>m.IsMain).Image,
-                    DessertImage = dbBasketProduct.Starter.Images.FirstOrDefault(m => m.IsMain).Image,
+                    //StarterImage = dbBasketProduct.Starter.Images.FirstOrDefault(m=>m.IsMain).Image,
+                    DessertImage = dbBasketProduct.Dessert.Images.FirstOrDefault(m => m.IsMain).Image,
                     StarterMenuPrice = dbBasketProduct.Starter.Price,
                     DessertMenuPrice = dbBasketProduct.Dessert.Price,
                     Quantity = dbBasketProduct.Quantity,
-                    StarterTotal = (dbBasketProduct.Starter.Price * dbBasketProduct.Quantity),
+                    DessertTotal = (dbBasketProduct.Dessert.Price * dbBasketProduct.Quantity),
 
                 };
 

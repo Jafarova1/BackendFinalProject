@@ -39,7 +39,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 
 builder.Services.AddScoped<IBlogService, BlogService>();
-builder.Services.AddScoped<ILayoutService, LayoutService>();
+builder.Services.AddScoped< LayoutService>();
 builder.Services.AddScoped<ISubscribeService, SubscribeService>();
 builder.Services.AddScoped<IAboutUsService, AboutUsService>();
 builder.Services.AddScoped<IAboutSliderService, AboutSliderService>();
@@ -61,8 +61,9 @@ builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IAdvertismentService, AdvertismentService>();
 builder.Services.AddScoped<IRecentBlogService, RecentBlogService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
-//builder.Services.AddSingleton<ISettingService, SettingService>();
+builder.Services.AddScoped<ISettingService, SettingService>();
 
 
 

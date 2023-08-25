@@ -13,6 +13,7 @@
                         <th style="text-align: center;">UserName</th>
                         <th style="text-align: center;">Phone</th>
                         <th style="text-align: center;">Email</th>
+                        <th style="text-align: center;">Message</th>
                         <th style="text-align: center;">Operations</th>
                     </tr>
                 </thead>
@@ -28,6 +29,9 @@
                             </td>
                             <td class="py-1" style="text-align: center;">
                                 @contact.Email
+                            </td>
+                            <td class="py-1" style="text-align: center;">
+                                @contact.Message
                             </td>
                             <td class="py-1" style="text-align: center;">
                                 <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@contact.Id">Info</a>

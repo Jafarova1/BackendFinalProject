@@ -1,5 +1,6 @@
 ﻿using FinalProject.Data;
 using FinalProject.Models;
+using FinalProject.Services;
 using FinalProject.Services.Interfaces;
 using FinalProject.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -11,11 +12,11 @@ namespace FinalProject.Controllers
     public class AboutController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly ILayoutService _layoutService;
+        private readonly LayoutService _layoutService;
         private readonly IAboutSliderService _aboutSliderService;
         private readonly IAboutUsService _aboutUsService;
         private readonly ISubscribeService _subscribeService;
-        public AboutController(AppDbContext context,ILayoutService layoutService,IAboutSliderService aboutSliderService,IAboutUsService aboutUsService,ISubscribeService subscribeService)
+        public AboutController(AppDbContext context,LayoutService layoutService,IAboutSliderService aboutSliderService,IAboutUsService aboutUsService,ISubscribeService subscribeService)
         {
                 _context = context;
             _layoutService = layoutService;

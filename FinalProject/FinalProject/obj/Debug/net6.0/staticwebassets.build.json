@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eXOqGzRviyIlC2t8Vqe0cbYEPnEKNkwFtzASfosuI/I=",
+  "Hash": "0o+HzsbZtg7kGdj+afD9X5zaXDNQ2moy8kqlYirSQFU=",
   "Source": "FinalProject",
   "BasePath": "_content/FinalProject",
   "Mode": "Default",
@@ -9042,6 +9042,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\0c6ebf67-3158-4ecc-8f1f-d2ecf1b47afb blog-9.jpg",
+      "SourceId": "FinalProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\",
+      "BasePath": "_content/FinalProject",
+      "RelativePath": "images/0c6ebf67-3158-4ecc-8f1f-d2ecf1b47afb blog-9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\0c6ebf67-3158-4ecc-8f1f-d2ecf1b47afb blog-9.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\97e3df5b-ba42-4285-bd27-827da7f45c8a bg_2.jpg",
+      "SourceId": "FinalProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\",
+      "BasePath": "_content/FinalProject",
+      "RelativePath": "images/97e3df5b-ba42-4285-bd27-827da7f45c8a bg_2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\97e3df5b-ba42-4285-bd27-827da7f45c8a bg_2.jpg"
     },
     {
       "Identity": "C:\\Users\\GULTAJ\\OneDrive\\Desktop\\BackendFinal\\FinalProject\\FinalProject\\wwwroot\\images\\bg_1.jpg",

@@ -1102,14 +1102,16 @@ form button:hover {
 
 
 .cart-btn {
-    
     display: flex;
     justify-content: flex-end;
     right: 70px;
-    left:120px
-/*    bottom: 132px;
+    /*   left:120px*/
+    /*    bottom: 132px;
     width: 10%;
     left: 1227px;*/
+    position: relative;
+    left: 1194px;
+    bottom: 70px;
 }
 
 #cart {

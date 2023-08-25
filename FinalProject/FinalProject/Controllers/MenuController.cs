@@ -12,11 +12,11 @@ namespace FinalProject.Controllers
     public class MenuController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly ILayoutService _layoutService;
+        private readonly LayoutService _layoutService;
         private readonly IStarterMenuService _starterMenuService;
         private readonly IDessertMenuService _dessertMenuService;
         private readonly IOrderService _orderService;
-        public MenuController(AppDbContext context,ILayoutService layoutService,IStarterMenuService starterMenuService,IDessertMenuService dessertMenuService,IOrderService orderService)
+        public MenuController(AppDbContext context,LayoutService layoutService,IStarterMenuService starterMenuService,IDessertMenuService dessertMenuService,IOrderService orderService)
         {
                 _context = context;
             _layoutService = layoutService;

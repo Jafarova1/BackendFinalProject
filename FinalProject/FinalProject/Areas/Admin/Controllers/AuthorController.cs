@@ -79,7 +79,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 }
 
                 string fileName = Guid.NewGuid().ToString() + " " + author.Photo.FileName;
-                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                 await FileHelper.SaveFileAsync(newPath, author.Photo);
 
                 Author newAuthor = new()
@@ -110,7 +110,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 if (id == null) return BadRequest();
                 Author author = await _authorService.GetById(id);
                 if (author == null) return NotFound();
-                string path = FileHelper.GetFilePath(_env.WebRootPath, "/images", author.Image);
+                string path = FileHelper.GetFilePath(_env.WebRootPath, "images", author.Image);
                 FileHelper.DeleteFile(path);
                 _context.Authors.Remove(author);
                 await _context.SaveChangesAsync();
@@ -180,10 +180,10 @@ namespace FinalProject.Areas.Admin.Controllers
                         return View(model);
                     }
 
-                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "/images", dbAuthor.Image);
+                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "images", dbAuthor.Image);
                     FileHelper.DeleteFile(deletePath);
                     string fileName = Guid.NewGuid().ToString() + " " + author.Photo.FileName;
-                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "/images", fileName);
+                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "images", fileName);
                     await FileHelper.SaveFileAsync(newPath, author.Photo);
                     dbAuthor.Image = fileName;
                 }

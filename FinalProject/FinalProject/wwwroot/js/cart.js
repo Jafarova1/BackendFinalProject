@@ -13,22 +13,22 @@ var item={
 }
 
 
-function addToCart(item){
-	cartItems.push(item);
+//function addToCart(item){
+//	cartItems.push(item);
 
-	document.getElementById("itemCounter").innerHTML=cartItems.length;
-	console.log(cartItems);
-	showTotal();
+//	document.getElementById("itemCounter").innerHTML=cartItems.length;
+//	console.log(cartItems);
+//	showTotal();
 
 
-}
-function clickCart(){
+//}
+//function clickCart(){
 
-	isTotalHidden = !isTotalHidden;
-	showTotal();
+//	isTotalHidden = !isTotalHidden;
+//	showTotal();
     
 
-}
+//}
 
 function showTotal(){
 	var orderTotal=document.getElementById("orderTotal");
@@ -47,11 +47,11 @@ function showTotal(){
 
 
 
-$(document).on('click', '.remove-btn', function () {
+$(document).on('click', '#deleteBtn', function () {
     var id = $(this).data('id')
     var basketCount = $('.cart-quantity')
     var basketCurrentCount = $('.cart-quantity').html()
-    var quantity = $(this).data('product-quantity')
+    var quantity = $(this).data('quantity')
     var sum = basketCurrentCount - quantity
 
     $.ajax({

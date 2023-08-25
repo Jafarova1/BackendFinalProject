@@ -1,6 +1,7 @@
 ﻿using FinalProject.Data;
 using FinalProject.Helpers;
 using FinalProject.Models;
+using FinalProject.Services;
 using FinalProject.Services.Interfaces;
 using FinalProject.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -11,9 +12,9 @@ namespace FinalProject.Controllers
     public class AdditionalFoodController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly ILayoutService _layoutService;
+        private readonly LayoutService _layoutService;
         private readonly IAdditionalFoodService _additionalFoodService;
-        public AdditionalFoodController(AppDbContext context, ILayoutService layoutService, IAdditionalFoodService additionalFoodService)
+        public AdditionalFoodController(AppDbContext context, LayoutService layoutService, IAdditionalFoodService additionalFoodService)
         {
             _context = context;
             _layoutService = layoutService;

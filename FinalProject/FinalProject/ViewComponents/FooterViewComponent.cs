@@ -1,4 +1,5 @@
-﻿using FinalProject.Services.Interfaces;
+﻿using FinalProject.Services;
+using FinalProject.Services.Interfaces;
 using FinalProject.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,10 +7,10 @@ namespace FinalProject.ViewComponents
 {
     public class FooterViewComponent: ViewComponent
     {
-        private readonly ILayoutService _layoutService;
+        private readonly LayoutService _layoutService;
         private readonly ISocialService _socialService;
 
-        public FooterViewComponent(ILayoutService layoutService, ISocialService socialService)
+        public FooterViewComponent(LayoutService layoutService, ISocialService socialService)
         {
             _layoutService = layoutService;
             _socialService = socialService; 
@@ -17,9 +18,10 @@ namespace FinalProject.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
+                Dictionary<string, string> settings = await _layoutService.GetSettingDatas();
             FooterVM model = new FooterVM()
             {
-                SettingDatas = _layoutService.GetSettingDatas(),
+                SettingDatas = settings,
                 Socials = await _socialService.GetAll()
             };
 
