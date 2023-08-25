@@ -75,7 +75,7 @@ namespace FinalProject.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            await GetCategoriesAndDiscounts();
+          
             return View();
         }
 
@@ -83,7 +83,7 @@ namespace FinalProject.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(StarterMenuCreateVM request)
         {
-            await GetCategoriesAndDiscounts();
+          
 
             if (!ModelState.IsValid)
             {

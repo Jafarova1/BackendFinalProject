@@ -4,6 +4,7 @@ using FinalProject.Helpers;
 using FinalProject.Models;
 using FinalProject.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject.Areas.Admin.Controllers
 {
@@ -117,6 +118,8 @@ namespace FinalProject.Areas.Admin.Controllers
                 ViewBag.error = ex.Message;
                 return View();
             }
+
+
         }
 
         [HttpGet]

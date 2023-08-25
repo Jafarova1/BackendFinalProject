@@ -6,5 +6,6 @@ namespace FinalProject.Services.Interfaces
     {
         Task<List<RecentBlog>> GetAll();
         Task<RecentBlog> GetById(int? id);
+        //Task DeleteAsync(int id);
     }
 }

@@ -76,7 +76,7 @@ namespace FinalProject.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            await GetCategoriesAndDiscounts();
+          
             return View();
         }
 
